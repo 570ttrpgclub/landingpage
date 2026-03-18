@@ -1,200 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NEPA TTRPG Club | Be the Hero of a Shared Story</title>
-    <meta
-      name="description"
-      content="Join NEPA TTRPG Club and become the hero of a shared story. A welcoming tabletop roleplaying community with a simple intro survey and a gallery of everyday heroes with D&D-inspired themes."
-    />
-    <meta name="theme-color" content="#0b1020" />
-    <meta property="og:title" content="NEPA TTRPG Club" />
-    <meta
-      property="og:description"
-      content="Be the hero of a shared story. Join the club, explore the gallery, and open the intro survey."
-    />
-    <meta property="og:type" content="website" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEPA TTRPG Club</title>
 
-    <header class="site-header" id="top">
-      <div class="container nav-wrap">
-        <a class="brand" href="#top" aria-label="NEPA TTRPG Club home">
-          <span class="brand-mark">d20</span>
-          <span class="brand-text">
-            <strong>NEPA TTRPG Club</strong>
-            <small>Be the hero of a shared story</small>
-          </span>
-        </a>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0f19;
+      color: #fff;
+      text-align: center;
+    }
 
-        <nav class="site-nav" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#join">Join</a>
-          <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325" target="_blank" rel="noopener noreferrer">Open Intro Survey</a>
-        </nav>
-      </div>
-    </header>
+    h1, h2, p {
+      margin: 0;
+      padding: 0;
+    }
 
-    <main id="main-content">
-      <section class="hero">
-        <div class="hero-backdrop" aria-hidden="true"></div>
-        <div class="container hero-grid">
-          <div class="hero-copy reveal">
-            <p class="eyebrow">Tabletop roleplaying in Northeast Pennsylvania</p>
-            <h1>Be the hero of a shared story.</h1>
-            <p class="hero-text">
-              NEPA TTRPG Club is a welcoming place for everyday people to step into
-              extraordinary roles, make friends, and build unforgettable stories together.
-              Whether you are brand new or already speak fluent dice goblin, there is room at the table.
-            </p>
+    .hero {
+      position: relative;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('images/hero-party.jpg') center/cover no-repeat;
+    }
 
-            <div class="hero-actions">
-              <a class="button button-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325" target="_blank" rel="noopener noreferrer">
-                Open Google Intro Survey
-              </a>
-              <a class="button button-secondary" href="#gallery">
-                View Story Gallery
-              </a>
-            </div>
+    .hero-overlay {
+      background: rgba(0,0,0,0.6);
+      padding: 40px;
+      border-radius: 12px;
+    }
 
-            <ul class="hero-points" aria-label="Club highlights">
-              <li>Beginner-friendly</li>
-              <li>Story-first community</li>
-              <li>Real people, heroic adventures</li>
-            </ul>
-          </div>
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
 
-          <div class="hero-card reveal delay-1">
-            <div class="hero-card-inner">
-              <p class="hero-card-label">Featured image</p>
-              <figure>
-                <img
-                  src="images/hero-main.jpg"
-                  alt="Hero image for NEPA TTRPG Club showing everyday life with a D&D-inspired twist"
-                  width="900"
-                  height="1100"
-                  loading="eager"
-                  decoding="async"
-                />
-              </figure>
-              <div class="hero-card-copy">
-                <h2>Everyday life. Legendary meaning.</h2>
-                <p>
-                  Use your artwork to show how ordinary moments can feel like the opening scene of an adventure.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background: #f59e0b;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
 
-      <section class="about section" id="about">
-        <div class="container section-grid">
-          <div class="section-heading reveal">
-            <p class="eyebrow">What this club is about</p>
-            <h2>A premium first impression, without the confusion.</h2>
-            <p>
-              This landing page keeps the goal simple. Help new visitors understand the club fast,
-              feel the tone of the community, and open the Google intro survey with zero friction.
-            </p>
-          </div>
+    .cta-button:hover {
+      background: #fbbf24;
+      transform: scale(1.05);
+    }
 
-          <div class="feature-grid">
-            <article class="feature-card reveal">
-              <div class="feature-icon">01</div>
-              <h3>Clear first step</h3>
-              <p>
-                Visitors always have one obvious action to take: open the intro survey and get started.
-              </p>
-            </article>
+    .section {
+      padding: 60px 20px;
+    }
 
-            <article class="feature-card reveal delay-1">
-              <div class="feature-icon">02</div>
-              <h3>Story-driven design</h3>
-              <p>
-                The visuals lean into heroic fantasy while still feeling welcoming, modern, and easy to use.
-              </p>
-            </article>
+    .image-block {
+      max-width: 900px;
+      margin: 40px auto;
+    }
 
-            <article class="feature-card reveal delay-2">
-              <div class="feature-icon">03</div>
-              <h3>Built for GitHub</h3>
-              <p>
-                No frameworks, no install steps, no headaches. Upload the files to GitHub Pages and it works.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
+    .image-block img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
 
-      <section class="gallery section" id="gallery">
-        <div class="container">
-          <div class="section-heading reveal">
-            <p class="eyebrow">Visual theme</p>
-            <h2>Ordinary people. Fantasy echoes.</h2>
-            <p>
-              Replace these sample image slots with your own created artwork. The layout is ready for everyday-life scenes
-              touched by D&D symbolism, adventure, and quiet heroism.
-            </p>
-          </div>
+    .caption {
+      margin-top: 12px;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
 
-          <div class="gallery-grid">
-            <figure class="gallery-card reveal">
-              <img src="images/gallery-1.jpg" alt="Gallery image one" width="700" height="850" loading="lazy" decoding="async" />
-              <figcaption>Morning routine, quest energy.</figcaption>
-            </figure>
-            <figure class="gallery-card reveal delay-1">
-              <img src="images/gallery-2.jpg" alt="Gallery image two" width="700" height="850" loading="lazy" decoding="async" />
-              <figcaption>Workday pressure, party resolve.</figcaption>
-            </figure>
-            <figure class="gallery-card reveal delay-2">
-              <img src="images/gallery-3.jpg" alt="Gallery image three" width="700" height="850" loading="lazy" decoding="async" />
-              <figcaption>Neighborhood life, tavern spirit.</figcaption>
-            </figure>
-            <figure class="gallery-card reveal">
-              <img src="images/gallery-4.jpg" alt="Gallery image four" width="700" height="850" loading="lazy" decoding="async" />
-              <figcaption>Small moments, epic undertones.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
+    .final-cta {
+      padding: 80px 20px;
+      background: linear-gradient(to top, #020617, #0b0f19);
+    }
 
-      <section class="join section" id="join">
-        <div class="container join-panel reveal">
-          <div class="join-copy">
-            <p class="eyebrow">Ready to join</p>
-            <h2>Your first quest is easy.</h2>
-            <p>
-              Open the Google intro survey, tell us a little about yourself, and take the first step into the story.
-            </p>
-          </div>
-          <div class="join-actions">
-            <a class="button button-primary button-large" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325" target="_blank" rel="noopener noreferrer">
-              Open Intro Survey
-            </a>
-            <p class="microcopy">This opens in a new tab.</p>
-          </div>
-        </div>
-      </section>
-    </main>
+    .final-cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
 
-    <footer class="site-footer">
-      <div class="container footer-wrap">
-        <p>© <span id="year"></span> NEPA TTRPG Club. All rights reserved.</p>
-        <a href="#top">Back to top</a>
-      </div>
-    </footer>
+  </style>
+</head>
 
-    <script src="script.js" defer></script>
-  </body>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Be the Hero of a Shared Story</h1>
+      <p>Join the NEPA TTRPG Club</p>
+      <a class="cta-button" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform" target="_blank">
+        Join the Adventure
+      </a>
+    </div>
+  </section>
+
+  <!-- ACT 1 -->
+  <section class="section">
+    <div class="image-block">
+      <img src="images/scene-01-dave.jpg">
+      <p class="caption">Just another day...</p>
+    </div>
+
+    <div class="image-block">
+      <img src="images/scene-02-karen.jpg">
+      <p class="caption">Same routine.</p>
+    </div>
+
+    <div class="image-block">
+      <img src="images/scene-03-it.jpg">
+      <p class="caption">Same problems.</p>
+    </div>
+
+    <div class="image-block">
+      <img src="images/scene-04-politics.jpg">
+      <p class="caption">Nothing changes.</p>
+    </div>
+  </section>
+
+  <!-- ACT 2 -->
+  <section class="section">
+    <div class="image-block">
+      <img src="images/scene-05-lunch.jpg">
+      <p class="caption">Something feels off.</p>
+    </div>
+
+    <div class="image-block">
+      <img src="images/scene-06-park.jpg">
+      <p class="caption">Did you see that?</p>
+    </div>
+
+    <div class="image-block">
+      <img src="images/scene-07-armor.jpg">
+      <p class="caption">Maybe it’s nothing...</p>
+    </div>
+  </section>
+
+  <!-- ACT 3 -->
+  <section class="section">
+    <div class="image-block">
+      <img src="images/scene-08-wizard.jpg">
+      <p class="caption">Or maybe...</p>
+    </div>
+
+    <div class="image-block">
+      <img src="images/scene-09-druid.jpg">
+      <p class="caption">It’s something more.</p>
+    </div>
+
+    <div class="image-block">
+      <img src="images/scene-10-fighter.jpg">
+      <p class="caption">A different path.</p>
+    </div>
+
+    <div class="image-block">
+      <img src="images/scene-11-bard.jpg">
+      <p class="caption">A new story.</p>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="section">
+    <div class="image-block">
+      <img src="images/scene-12-ruby.jpg">
+      <p class="caption">Your story.</p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>Ready to Begin?</h2>
+    <a class="cta-button" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform" target="_blank">
+      Join the NEPA TTRPG Club
+    </a>
+  </section>
+
+</body>
 </html>
