@@ -1,226 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NEPA TTRPG Club | You Are Already the Hero</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<title>NEPA TTRPG Club | You Are Already the Hero</title>
 
-  <style>
-    :root {
-      --bg: #0b1020;
-      --text: #ffffff;
-      --muted: #9aa3b2;
-      --accent: #7c5cff;
-      --card: #12182f;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+:root {
+  --bg: #0a0a0f;
+  --text: #ffffff;
+  --muted: #a0a6b3;
+  --accent: #7c5cff;
+}
 
-    body {
-      font-family: Inter, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 2rem;
-    }
+body {
+  font-family: Inter, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
 
-    h1, h2 {
-      font-family: Cinzel, serif;
-      letter-spacing: 0.5px;
-    }
+/* GENERAL */
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
+h1, h2 {
+  font-family: Cinzel, serif;
+  letter-spacing: 1px;
+}
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
 
-    p {
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
 
-    .center {
-      text-align: center;
-    }
+p {
+  max-width: 700px;
+  margin: 1rem auto;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
 
-    .button {
-      display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 0.9rem 1.4rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-top: 1rem;
-    }
+/* HERO */
+.hero {
+  position: relative;
+  background: url('images/hero-main.jpg') center/cover no-repeat;
+}
 
-    .section {
-      padding: 5rem 0;
-    }
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+}
 
-    .hero {
-      text-align: center;
-      padding: 6rem 2rem;
-    }
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
 
-    .hero p {
-      max-width: 600px;
-      margin: auto;
-    }
+.button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 1rem 1.6rem;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+}
 
-    .image-block {
-      max-width: 500px;
-      margin: 2rem auto;
-    }
+/* SPLIT SECTION */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
-    img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+.split img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
+.split-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
 
-    .card {
-      background: var(--card);
-      padding: 1.5rem;
-      border-radius: 10px;
-    }
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
 
-    .steps {
-      max-width: 600px;
-      margin: auto;
-      text-align: left;
-    }
+.gallery img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
 
-    .steps li {
-      margin-bottom: 0.8rem;
-    }
+/* DARK PANEL */
+.panel {
+  max-width: 600px;
+  margin: auto;
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--muted);
-    }
-  </style>
+/* CTA */
+.cta {
+  background: #111322;
+}
+</style>
 </head>
 
 <body>
 
 <!-- HERO -->
 <section class="hero">
-  <h1>You are already the hero.</h1>
-  <p>You just haven’t rolled initiative yet.</p>
-
-  <p>
-    NEPA TTRPG Club turns everyday people into adventurers,
-    storytellers, and party members in a shared world.
-  </p>
-
-  <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform" target="_blank">
-    Start Your First Quest
-  </a>
-</section>
-
-<!-- IDENTITY / EMOTION -->
-<section class="section center">
-  <div class="container">
-    <h2>This is you.</h2>
-    <p>Ordinary life. Something more underneath.</p>
-
-    <div class="image-block">
-      <img src="images/hero-main.jpg" alt="Veteran seeing themselves as a knight" />
-    </div>
-
-    <p>
-      You’re not “bad at socializing.”
-      You just haven’t found your party yet.
-    </p>
-  </div>
-</section>
-
-<!-- WHAT THIS IS -->
-<section class="section">
-  <div class="container center">
-    <h2>What actually happens?</h2>
-
-    <ul class="steps">
-      <li>You show up</li>
-      <li>You sit at a table</li>
-      <li>You create a character</li>
-      <li>You play a story together</li>
-    </ul>
-
-    <p>No acting experience. No pressure. Just a shared story.</p>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="section">
-  <div class="container center">
-    <h2>Ordinary people. Fantasy echoes.</h2>
-
-    <div class="gallery">
-      <img src="images/gallery-1.jpg" />
-      <img src="images/gallery-2.jpg" />
-      <img src="images/gallery-3.jpg" />
-      <img src="images/gallery-4.jpg" />
-    </div>
-  </div>
-</section>
-
-<!-- FEAR REMOVAL -->
-<section class="section">
-  <div class="container center">
-    <h2>Worried about joining?</h2>
-
-    <div class="card">
-      <p>“I’ve never played before”</p>
-      <p>“I won’t know what to do”</p>
-      <p>“I’m awkward”</p>
-    </div>
-
-    <p>Good. That’s most of the table.</p>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section center">
-  <div class="container">
-    <h2>Your first move is simple.</h2>
-    <p>Open the survey. We’ll guide the rest.</p>
+  <div class="hero-content">
+    <h1>You are already the hero.</h1>
+    <p>You just haven’t rolled initiative yet.</p>
 
     <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform" target="_blank">
-      Open Intro Survey
+      Start Your First Quest
     </a>
   </div>
 </section>
 
-<footer>
-  © NEPA TTRPG Club
-</footer>
+<!-- IDENTITY -->
+<section>
+  <div class="panel">
+    <h2>This is you.</h2>
+    <p>
+      Not a character. Not a role.  
+      You.
+    </p>
+    <p>
+      The same person… just seen differently.
+    </p>
+  </div>
+</section>
+
+<!-- SPLIT VISUAL -->
+<section class="split">
+  <img src="images/gallery-1.jpg">
+  <div class="split-text">
+    <div>
+      <h2>You’re not bad at this.</h2>
+      <p>You just haven’t found your party yet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY EXPLANATION -->
+<section>
+  <div class="panel">
+    <h2>What happens here?</h2>
+    <p>
+      You sit at a table.  
+      You create someone new.  
+      And then… something clicks.
+    </p>
+    <p>
+      A story begins.  
+      And somehow, it feels real.
+    </p>
+  </div>
+</section>
+
+<!-- GALLERY STRIP -->
+<section class="gallery">
+  <img src="images/gallery-1.jpg">
+  <img src="images/gallery-2.jpg">
+  <img src="images/gallery-3.jpg">
+  <img src="images/gallery-4.jpg">
+</section>
+
+<!-- FEAR BREAK -->
+<section>
+  <div class="panel">
+    <h2>Worried?</h2>
+    <p>“I’ve never played before.”</p>
+    <p>“I won’t know what to do.”</p>
+    <p>“I’m awkward.”</p>
+
+    <p><strong>Good.</strong></p>
+
+    <p>That’s where every story starts.</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta">
+  <div class="panel">
+    <h2>Your first move is simple.</h2>
+    <p>Open the survey. We’ll guide the rest.</p>
+
+    <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform" target="_blank">
+      Begin
+    </a>
+  </div>
+</section>
 
 </body>
 </html>
