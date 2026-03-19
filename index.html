@@ -1,187 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NEPA TTRPG Club</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEPA TTRPG Club | You Are Already the Hero</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b0f19;
-      color: #fff;
-      text-align: center;
+    :root {
+      --bg: #0b1020;
+      --text: #ffffff;
+      --muted: #9aa3b2;
+      --accent: #7c5cff;
+      --card: #12182f;
     }
 
-    h1, h2, p {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    .hero {
-      position: relative;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: url('images/hero-party.jpg') center/cover no-repeat;
+    body {
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    .hero-overlay {
-      background: rgba(0,0,0,0.6);
-      padding: 40px;
-      border-radius: 12px;
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
     }
 
-    .hero h1 {
+    h1, h2 {
+      font-family: Cinzel, serif;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
       font-size: 3rem;
-      margin-bottom: 20px;
+      margin-bottom: 1rem;
     }
 
-    .cta-button {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .button {
       display: inline-block;
-      margin-top: 20px;
-      padding: 14px 28px;
-      background: #f59e0b;
-      color: #000;
+      background: var(--accent);
+      color: white;
+      padding: 0.9rem 1.4rem;
+      border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
-
-    .cta-button:hover {
-      background: #fbbf24;
-      transform: scale(1.05);
+      font-weight: 600;
+      margin-top: 1rem;
     }
 
     .section {
-      padding: 60px 20px;
+      padding: 5rem 0;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
     }
 
     .image-block {
-      max-width: 900px;
-      margin: 40px auto;
+      max-width: 500px;
+      margin: 2rem auto;
     }
 
-    .image-block img {
+    img {
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
-    .caption {
-      margin-top: 12px;
-      font-size: 1.1rem;
-      color: #ccc;
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
 
-    .final-cta {
-      padding: 80px 20px;
-      background: linear-gradient(to top, #020617, #0b0f19);
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 10px;
     }
 
-    .final-cta h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+    .steps {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
     }
 
+    .steps li {
+      margin-bottom: 0.8rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-overlay">
-      <h1>Be the Hero of a Shared Story</h1>
-      <p>Join the NEPA TTRPG Club</p>
-      <a class="cta-button" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform" target="_blank">
-        Join the Adventure
-      </a>
-    </div>
-  </section>
+<!-- HERO -->
+<section class="hero">
+  <h1>You are already the hero.</h1>
+  <p>You just haven’t rolled initiative yet.</p>
 
-  <!-- ACT 1 -->
-  <section class="section">
-    <div class="image-block">
-      <img src="images/scene-01-dave.jpg">
-      <p class="caption">Just another day...</p>
-    </div>
+  <p>
+    NEPA TTRPG Club turns everyday people into adventurers,
+    storytellers, and party members in a shared world.
+  </p>
 
-    <div class="image-block">
-      <img src="images/scene-02-karen.jpg">
-      <p class="caption">Same routine.</p>
-    </div>
+  <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform" target="_blank">
+    Start Your First Quest
+  </a>
+</section>
+
+<!-- IDENTITY / EMOTION -->
+<section class="section center">
+  <div class="container">
+    <h2>This is you.</h2>
+    <p>Ordinary life. Something more underneath.</p>
 
     <div class="image-block">
-      <img src="images/scene-03-it.jpg">
-      <p class="caption">Same problems.</p>
+      <img src="images/hero-main.jpg" alt="Veteran seeing themselves as a knight" />
     </div>
 
-    <div class="image-block">
-      <img src="images/scene-04-politics.jpg">
-      <p class="caption">Nothing changes.</p>
-    </div>
-  </section>
+    <p>
+      You’re not “bad at socializing.”
+      You just haven’t found your party yet.
+    </p>
+  </div>
+</section>
 
-  <!-- ACT 2 -->
-  <section class="section">
-    <div class="image-block">
-      <img src="images/scene-05-lunch.jpg">
-      <p class="caption">Something feels off.</p>
+<!-- WHAT THIS IS -->
+<section class="section">
+  <div class="container center">
+    <h2>What actually happens?</h2>
+
+    <ul class="steps">
+      <li>You show up</li>
+      <li>You sit at a table</li>
+      <li>You create a character</li>
+      <li>You play a story together</li>
+    </ul>
+
+    <p>No acting experience. No pressure. Just a shared story.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <div class="container center">
+    <h2>Ordinary people. Fantasy echoes.</h2>
+
+    <div class="gallery">
+      <img src="images/gallery-1.jpg" />
+      <img src="images/gallery-2.jpg" />
+      <img src="images/gallery-3.jpg" />
+      <img src="images/gallery-4.jpg" />
+    </div>
+  </div>
+</section>
+
+<!-- FEAR REMOVAL -->
+<section class="section">
+  <div class="container center">
+    <h2>Worried about joining?</h2>
+
+    <div class="card">
+      <p>“I’ve never played before”</p>
+      <p>“I won’t know what to do”</p>
+      <p>“I’m awkward”</p>
     </div>
 
-    <div class="image-block">
-      <img src="images/scene-06-park.jpg">
-      <p class="caption">Did you see that?</p>
-    </div>
+    <p>Good. That’s most of the table.</p>
+  </div>
+</section>
 
-    <div class="image-block">
-      <img src="images/scene-07-armor.jpg">
-      <p class="caption">Maybe it’s nothing...</p>
-    </div>
-  </section>
+<!-- CTA -->
+<section class="section center">
+  <div class="container">
+    <h2>Your first move is simple.</h2>
+    <p>Open the survey. We’ll guide the rest.</p>
 
-  <!-- ACT 3 -->
-  <section class="section">
-    <div class="image-block">
-      <img src="images/scene-08-wizard.jpg">
-      <p class="caption">Or maybe...</p>
-    </div>
-
-    <div class="image-block">
-      <img src="images/scene-09-druid.jpg">
-      <p class="caption">It’s something more.</p>
-    </div>
-
-    <div class="image-block">
-      <img src="images/scene-10-fighter.jpg">
-      <p class="caption">A different path.</p>
-    </div>
-
-    <div class="image-block">
-      <img src="images/scene-11-bard.jpg">
-      <p class="caption">A new story.</p>
-    </div>
-  </section>
-
-  <!-- FINAL -->
-  <section class="section">
-    <div class="image-block">
-      <img src="images/scene-12-ruby.jpg">
-      <p class="caption">Your story.</p>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <h2>Ready to Begin?</h2>
-    <a class="cta-button" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform" target="_blank">
-      Join the NEPA TTRPG Club
+    <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform" target="_blank">
+      Open Intro Survey
     </a>
-  </section>
+  </div>
+</section>
+
+<footer>
+  © NEPA TTRPG Club
+</footer>
 
 </body>
 </html>
