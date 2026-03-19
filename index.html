@@ -4,16 +4,16 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>NEPA TTRPG Club | You Are Already the Hero</title>
+<title>NEPA TTRPG Club | Come Play</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #0a0a0f;
+  --bg: #0c1024;
   --text: #ffffff;
-  --muted: #a0a6b3;
-  --accent: #7c5cff;
+  --muted: #b0b7c3;
+  --accent: #6c8cff;
 }
 
 * {
@@ -26,10 +26,8 @@ body {
   font-family: Inter, sans-serif;
   background: var(--bg);
   color: var(--text);
-  overflow-x: hidden;
 }
 
-/* GENERAL */
 section {
   min-height: 100vh;
   display: flex;
@@ -41,35 +39,44 @@ section {
 
 h1, h2 {
   font-family: Cinzel, serif;
-  letter-spacing: 1px;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
 p {
-  max-width: 700px;
+  max-width: 650px;
   margin: 1rem auto;
   color: var(--muted);
-  font-size: 1.1rem;
+}
+
+.button {
+  margin-top: 1.5rem;
+  display: inline-block;
+  padding: 0.9rem 1.5rem;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
 }
 
 /* HERO */
 .hero {
-  position: relative;
   background: url('images/hero-main.jpg') center/cover no-repeat;
+  position: relative;
 }
 
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+  background: rgba(0,0,0,0.5);
 }
 
 .hero-content {
@@ -77,57 +84,32 @@ p {
   z-index: 2;
 }
 
-.button {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 1rem 1.6rem;
-  background: var(--accent);
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 6px;
+/* IMAGE BLOCK */
+.image {
+  max-width: 450px;
+  margin: auto;
 }
 
-/* SPLIT SECTION */
-.split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.split img {
+.image img {
   width: 100%;
-  height: 100vh;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-}
-
-.split-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem;
+  border-radius: 10px;
 }
 
 /* GALLERY */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 1rem;
+  width: 100%;
 }
 
 .gallery img {
   width: 100%;
-  height: 100vh;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-}
-
-/* DARK PANEL */
-.panel {
-  max-width: 600px;
-  margin: auto;
-}
-
-/* CTA */
-.cta {
-  background: #111322;
+  border-radius: 8px;
 }
 </style>
 </head>
@@ -137,86 +119,86 @@ p {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>You are already the hero.</h1>
-    <p>You just haven’t rolled initiative yet.</p>
+    <h1>Come play a story together.</h1>
+    <p>
+      NEPA TTRPG Club is a welcoming place to try tabletop roleplaying games,
+      meet new people, and have fun.
+    </p>
 
     <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform" target="_blank">
-      Start Your First Quest
+      Join the Adventure
     </a>
   </div>
 </section>
 
-<!-- IDENTITY -->
+<!-- WHAT THIS IS -->
 <section>
-  <div class="panel">
-    <h2>This is you.</h2>
+  <div>
+    <h2>What is this?</h2>
     <p>
-      Not a character. Not a role.  
-      You.
+      It’s a group of people sitting around a table,
+      telling a story together.
     </p>
     <p>
-      The same person… just seen differently.
+      You don’t need experience.  
+      You don’t need to know the rules.  
+      We’ll help you every step of the way.
     </p>
   </div>
 </section>
 
-<!-- SPLIT VISUAL -->
-<section class="split">
-  <img src="images/gallery-1.jpg">
-  <div class="split-text">
-    <div>
-      <h2>You’re not bad at this.</h2>
-      <p>You just haven’t found your party yet.</p>
+<!-- IMAGE / EMOTION -->
+<section>
+  <div>
+    <div class="image">
+      <img src="images/gallery-1.jpg" alt="">
+    </div>
+
+    <h2>It starts simple.</h2>
+    <p>
+      A character. A few dice.  
+      And a group of people ready to imagine together.
+    </p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <div>
+    <h2>Every table looks different.</h2>
+
+    <div class="gallery">
+      <img src="images/gallery-1.jpg">
+      <img src="images/gallery-2.jpg">
+      <img src="images/gallery-3.jpg">
+      <img src="images/gallery-4.jpg">
     </div>
   </div>
 </section>
 
-<!-- STORY EXPLANATION -->
+<!-- FEAR REMOVAL -->
 <section>
-  <div class="panel">
-    <h2>What happens here?</h2>
+  <div>
+    <h2>New to this?</h2>
+    <p>That’s perfect.</p>
+
     <p>
-      You sit at a table.  
-      You create someone new.  
-      And then… something clicks.
-    </p>
-    <p>
-      A story begins.  
-      And somehow, it feels real.
+      Most people here are trying it for the first time.
+      You’ll learn by playing, not studying.
     </p>
   </div>
 </section>
 
-<!-- GALLERY STRIP -->
-<section class="gallery">
-  <img src="images/gallery-1.jpg">
-  <img src="images/gallery-2.jpg">
-  <img src="images/gallery-3.jpg">
-  <img src="images/gallery-4.jpg">
-</section>
-
-<!-- FEAR BREAK -->
+<!-- CTA -->
 <section>
-  <div class="panel">
-    <h2>Worried?</h2>
-    <p>“I’ve never played before.”</p>
-    <p>“I won’t know what to do.”</p>
-    <p>“I’m awkward.”</p>
-
-    <p><strong>Good.</strong></p>
-
-    <p>That’s where every story starts.</p>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="cta">
-  <div class="panel">
-    <h2>Your first move is simple.</h2>
-    <p>Open the survey. We’ll guide the rest.</p>
+  <div>
+    <h2>Ready to try?</h2>
+    <p>
+      Fill out the short intro survey and we’ll help you get started.
+    </p>
 
     <a class="button" href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform" target="_blank">
-      Begin
+      Open Intro Survey
     </a>
   </div>
 </section>
