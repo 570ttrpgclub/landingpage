@@ -6,7 +6,7 @@
   <title>NEPA TTRPG Club | Build Your Party. Share the Adventure.</title>
   <meta
     name="description"
-    content="NEPA TTRPG Club is a welcoming tabletop gaming community for ages 14+ and adults. Meet new players, make friends, and start your adventure with one quick survey."
+    content="NEPA TTRPG Club is a welcoming tabletop gaming community for teens ages 14 to 17 and adults 18+. Meet new players, make friends, and start your adventure with one quick survey."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,17 +21,14 @@
       --bg-1: #0b0718;
       --bg-2: #140d2f;
       --panel: rgba(17, 10, 40, 0.9);
-      --panel-soft: rgba(255, 255, 255, 0.045);
       --panel-border: rgba(255, 255, 255, 0.11);
       --text: #f7f5ff;
       --muted: #d7cff7;
       --gold: #f6d36a;
       --gold-2: #ffe08c;
-      --accent: #8b5cf6;
       --shadow: 0 28px 60px rgba(0, 0, 0, 0.35);
       --radius-xl: 28px;
       --radius-lg: 22px;
-      --radius-md: 16px;
       --max-width: 1200px;
     }
 
@@ -114,8 +111,10 @@
     .brand-text span {
       display: block;
       font-size: 12px;
-      color: var(--muted);
+      color: var(--gold);
       line-height: 1.2;
+      letter-spacing: 0.3px;
+      margin-top: 2px;
     }
 
     .topbar-actions {
@@ -141,7 +140,7 @@
       padding: 15px 24px;
       border-radius: 999px;
       font-weight: 800;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       border: 1px solid transparent;
       text-align: center;
     }
@@ -178,16 +177,6 @@
       padding: 22px;
     }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent),
-        radial-gradient(circle at center, transparent 60%, rgba(255,255,255,0.025));
-    }
-
     .hero-eyebrow {
       text-align: center;
       font-size: 12px;
@@ -196,8 +185,6 @@
       color: var(--gold);
       font-weight: 800;
       margin-bottom: 8px;
-      position: relative;
-      z-index: 1;
     }
 
     .club-name {
@@ -206,18 +193,14 @@
       font-size: clamp(32px, 5vw, 60px);
       line-height: 1;
       margin: 0 0 18px;
-      position: relative;
-      z-index: 1;
     }
 
     .hero-image-shell {
       position: relative;
-      z-index: 1;
       border-radius: 24px;
       overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08);
       background: #130d2c;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
     }
 
     .hero-image {
@@ -236,8 +219,6 @@
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
       text-align: center;
       padding: 28px 8px 8px;
     }
@@ -249,7 +230,6 @@
       line-height: 0.92;
       letter-spacing: -1px;
       text-transform: uppercase;
-      text-wrap: balance;
     }
 
     .hero-copy {
@@ -356,7 +336,6 @@
     }
 
     .story-image-wrap {
-      position: relative;
       min-height: 360px;
       background: #120d2a;
     }
@@ -390,7 +369,6 @@
       margin: 0 0 12px;
       font-size: clamp(24px, 3vw, 36px);
       line-height: 1.05;
-      text-wrap: balance;
     }
 
     .story-copy p {
@@ -402,7 +380,6 @@
     .story-caption {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
       margin-top: 4px;
       padding: 10px 14px;
       width: fit-content;
@@ -414,44 +391,11 @@
       color: #f3ecff;
     }
 
-    .welcome-panel,
     .steps-panel,
     .meeting-panel,
     .contact-panel,
     .cta-panel {
       padding: 30px 24px;
-    }
-
-    .welcome-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .welcome-copy h3 {
-      margin: 0 0 12px;
-      font-size: clamp(24px, 3vw, 36px);
-    }
-
-    .welcome-copy p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .welcome-box {
-      padding: 22px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(246,211,106,0.11), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .welcome-box strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--gold);
-      font-size: 20px;
     }
 
     .steps-panel .section-title,
@@ -513,20 +457,26 @@
       gap: 18px;
     }
 
-    .meeting-card {
+    .meeting-card,
+    .contact-card,
+    .email-card {
       padding: 22px;
       border-radius: 20px;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
       border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .meeting-card h4 {
-      margin: 0 0 10px;
-      font-size: 22px;
+    .meeting-card h4,
+    .contact-card h4,
+    .email-card h4 {
+      margin: 0 0 14px;
+      font-size: 24px;
     }
 
     .meeting-card p,
-    .meeting-card li {
+    .meeting-card li,
+    .contact-item span,
+    .contact-item a {
       color: var(--muted);
       font-size: 15px;
     }
@@ -540,20 +490,6 @@
       display: grid;
       grid-template-columns: 0.95fr 1.05fr;
       gap: 20px;
-    }
-
-    .contact-card,
-    .email-card {
-      padding: 22px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .contact-card h4,
-    .email-card h4 {
-      margin: 0 0 14px;
-      font-size: 24px;
     }
 
     .contact-list {
@@ -570,22 +506,6 @@
       letter-spacing: 1px;
     }
 
-    .contact-item span,
-    .contact-item a {
-      color: var(--muted);
-      font-size: 15px;
-      word-break: break-word;
-    }
-
-    .hours-grid {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 8px 14px;
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
     .email-preview {
       margin: 0;
       white-space: pre-wrap;
@@ -598,23 +518,17 @@
       line-height: 1.6;
     }
 
-    .email-actions {
+    .email-actions,
+    .cta-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      justify-content: center;
       margin-top: 16px;
     }
 
     .cta-panel {
       text-align: center;
-    }
-
-    .cta-actions {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 8px;
     }
 
     footer {
@@ -636,8 +550,7 @@
       .meeting-grid,
       .contact-grid,
       .story-row,
-      .story-row.reverse,
-      .welcome-grid {
+      .story-row.reverse {
         grid-template-columns: 1fr;
       }
 
@@ -681,7 +594,6 @@
 
       .hero-card,
       .section-header,
-      .welcome-panel,
       .steps-panel,
       .meeting-panel,
       .contact-panel,
@@ -709,10 +621,10 @@
     <div class="wrap">
       <div class="topbar-inner">
         <div class="brand">
-          <img src="ttrpg-logo.png" alt="NEPA TTRPG Club logo" class="brand-logo" />
+          <img src="images/ttrpg-logo.png" alt="NEPA TTRPG Club logo" class="brand-logo" />
           <div class="brand-text">
             <strong>NEPA TTRPG Club</strong>
-            <span>Ages 14+ and Adults</span>
+            <span>Build Your Party. Share the Adventure.</span>
           </div>
         </div>
 
@@ -735,13 +647,13 @@
     <section class="hero">
       <div class="wrap">
         <div class="hero-card">
-          <div class="hero-eyebrow">Build Your Party. Share the Adventure.</div>
+          <div class="hero-eyebrow">A Table for New Players, Friends, and Families</div>
           <h1 class="club-name">NEPA TTRPG Club</h1>
 
           <div class="hero-image-shell">
             <img
               class="hero-image"
-              src="hero-party.jpg"
+              src="images/hero-party.jpg"
               alt="NEPA TTRPG Club gathered around the table for an adventure"
             />
             <div class="hero-overlay"></div>
@@ -755,14 +667,15 @@
             </p>
 
             <div class="hero-feature-row">
-              <div class="hero-feature">Ages 14+ &amp; Adults</div>
+              <div class="hero-feature">Ages 14 to 17</div>
+              <div class="hero-feature">Adults 18+</div>
               <div class="hero-feature">New Players Welcome</div>
               <div class="hero-feature">Friends &amp; Family Fun</div>
-              <div class="hero-feature">Storytelling &amp; Adventure</div>
               <div class="hero-feature">Community Through Gaming</div>
             </div>
 
             <div class="hero-actions">
+              <a class="btn btn-secondary" href="#how-it-works">See How It Works</a>
               <a
                 class="btn btn-primary"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
@@ -771,11 +684,10 @@
               >
                 Begin Your Quest
               </a>
-              <a class="btn btn-secondary" href="#how-it-works">See How It Works</a>
             </div>
 
             <div class="hero-note">
-              Start with one quick survey. We have not scheduled the first club meeting time yet, so signing up is the best way to get updates.
+              Start with one quick survey. We have not scheduled the first club meeting time yet, so signing up is the best way to receive updates.
             </div>
           </div>
         </div>
@@ -788,8 +700,10 @@
           <div class="section-header">
             <h2 class="section-title">A Gaming Community Built Around Fun</h2>
             <p class="section-subtitle">
-              Whether you want epic battles, funny roleplay, new friends, family game nights, or your very first D&amp;D campaign,
-              this club is about learning together, playing together, and building a strong local tabletop community.
+              This club is focused on building a local gaming community where people can meet other players,
+              make friends, play D&amp;D, and enjoy memorable adventures together.
+              We have two groups of gamers: ages 14 to 17, and adults 18+.
+              Teens, adults, friend groups, families, and curious first-time players can all sign up through the survey.
             </p>
           </div>
 
@@ -798,7 +712,7 @@
               <div class="story-image-wrap">
                 <img
                   class="story-image"
-                  src="scene-11-bard.jpg"
+                  src="images/scene-11-bard.jpg"
                   alt="A real-world moment with fantasy energy and a playful bard feel"
                 />
               </div>
@@ -806,8 +720,8 @@
                 <div class="story-kicker">Everyday Life, Bigger Stories</div>
                 <h3>Bring Your Imagination Into the Real World</h3>
                 <p>
-                  One of the best things about tabletop games is how ordinary life can suddenly feel magical.
-                  A funny moment, a bold choice, or a wild plan can turn into the kind of story your group talks about for years.
+                  Tabletop games turn ordinary moments into shared adventures. A funny conversation,
+                  a risky decision, or one lucky roll can become the kind of story your group remembers for years.
                 </p>
                 <div class="story-caption">Play D&amp;D with people who love adventure as much as you do.</div>
               </div>
@@ -817,16 +731,16 @@
               <div class="story-image-wrap">
                 <img
                   class="story-image"
-                  src="scene-12-ruby.jpg"
-                  alt="A dramatic library character full of personality and fun"
+                  src="images/scene-12-ruby.jpg"
+                  alt="A dramatic character moment full of personality and fun"
                 />
               </div>
               <div class="story-copy">
                 <div class="story-kicker">Big Personalities Welcome</div>
-                <h3>Serious Heroes, Silly Plans, and Memorable Chaos</h3>
+                <h3>Serious Heroes, Silly Plans, and Great Table Energy</h3>
                 <p>
-                  Some players love mystery. Some love roleplay. Some love clever strategy. Some just want to laugh with friends.
-                  Great tables make room for all of it.
+                  Some players love mystery. Some love roleplay. Some love strategy. Some just want to laugh and have fun with friends.
+                  Great D&amp;D tables make room for all of it.
                 </p>
                 <div class="story-caption">There is no one right way to be an adventurer.</div>
               </div>
@@ -836,7 +750,7 @@
               <div class="story-image-wrap">
                 <img
                   class="story-image"
-                  src="scene-08-wizard.jpg"
+                  src="images/scene-08-wizard.jpg"
                   alt="A magical everyday moment with a wizard reflection"
                 />
               </div>
@@ -844,8 +758,8 @@
                 <div class="story-kicker">New Players Belong Here</div>
                 <h3>You Do Not Need Experience to Start Playing</h3>
                 <p>
-                  If you are brand new, that is completely fine. We help new players learn the rules, understand how the game works,
-                  and feel comfortable at the table from the start.
+                  If you are brand new, that is completely fine. We help new players learn the rules,
+                  understand how the game works, and feel comfortable at the table from the start.
                 </p>
                 <div class="story-caption">Curiosity is enough. We can help with the rest.</div>
               </div>
@@ -855,41 +769,20 @@
               <div class="story-image-wrap">
                 <img
                   class="story-image"
-                  src="scene-03-it.jpg"
+                  src="images/scene-03-it.jpg"
                   alt="A strange office scene with fantasy energy"
                 />
               </div>
               <div class="story-copy">
                 <div class="story-kicker">Shared Fun</div>
-                <h3>Friends, Family, and a Table Full of Stories</h3>
+                <h3>Make Friends and Build a Real Gaming Community</h3>
                 <p>
-                  This club is not just about rolling dice. It is about meeting people, building friendships,
-                  learning together, and creating a gaming space that feels fun, welcoming, and worth coming back to.
+                  This club is not just about dice and rules. It is about finding people to game with,
+                  building friendships, and creating a table that feels fun, welcoming, and worth coming back to.
                 </p>
-                <div class="story-caption">A table can become a team faster than you think.</div>
+                <div class="story-caption">Epic moments are better when you share them.</div>
               </div>
             </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-card welcome-panel">
-          <div class="welcome-grid">
-            <div class="welcome-copy">
-              <h3>Welcome, Adventurer</h3>
-              <p>
-                Never played before? Perfect. You do not need experience, fancy books, or a fully built character before you join.
-                This club is designed to help new players, returning players, and experienced players all find a great table.
-              </p>
-            </div>
-
-            <div class="welcome-box">
-              <strong>Who Can Join?</strong>
-              Ages 14+ and adults are welcome. Teens, adults, friend groups, families, and curious first-time players can all sign up through the survey.
-            </div>
           </div>
         </div>
       </div>
@@ -900,7 +793,7 @@
         <div class="section-card steps-panel">
           <h2 class="section-title">How to Join</h2>
           <p class="section-subtitle">
-            We have not scheduled the first club meeting time yet, so the best way to get involved is to complete the survey and stay in contact.
+            We have not scheduled the first club meeting time yet, so the best way to get involved is to complete the interest survey and stay in contact.
           </p>
 
           <div class="steps-grid">
@@ -908,15 +801,18 @@
               <div class="step-number">1</div>
               <h4>Fill Out the Survey</h4>
               <p>
-                Start with one quick sign-up form so we can learn who is interested, what age group you are in, and what kind of games you want to play.
+                Start with one quick sign-up form so we can learn who is interested, what age group you are in,
+                and what kind of games you want to play.
               </p>
             </div>
 
             <div class="step-card">
               <div class="step-number">2</div>
-              <h4>Watch for Club Updates</h4>
+              <h4>Tell Us More About Your Game Style</h4>
               <p>
-                After you sign up, we will use that information to help shape the club and share details about upcoming meetings, plans, and next steps.
+                After you sign up, we will send you a more in-depth survey to learn what kind of game you would like to be part of
+                and other useful details. We use that information to help shape the club itself, pair you into a gaming table of like-minded gamers,
+                and know what to share with you about upcoming meetings, plans, and next steps.
               </p>
             </div>
 
@@ -924,7 +820,8 @@
               <div class="step-number">3</div>
               <h4>Join the Adventure</h4>
               <p>
-                Once the club schedule is set, you will be ready to jump into games, meet other players, and start building your place in the community.
+                Once the club schedule is set, you will be ready to jump into games, meet other players,
+                and start building your place in the community.
               </p>
             </div>
           </div>
@@ -937,7 +834,7 @@
         <div class="section-card meeting-panel">
           <h2 class="section-title">Meeting Location</h2>
           <p class="section-subtitle">
-            Club meetings will be held at the location below. The club is NEPA TTRPG Club. The library is the meeting location.
+            Club meetings will be held at the location below. Meeting dates and times are still being organized, so please sign up through the survey to stay updated.
           </p>
 
           <div class="meeting-grid">
@@ -975,7 +872,7 @@
         <div class="section-card contact-panel">
           <h2 class="section-title">Contact Information</h2>
           <p class="section-subtitle">
-            Have a question before the first meeting is announced? Reach out directly, or sign up through the survey so you can receive updates.
+            Have a question before the first meeting is announced? Reach out directly, or fill out the survey so you can receive updates.
           </p>
 
           <div class="contact-grid">
