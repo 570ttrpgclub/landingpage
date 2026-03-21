@@ -8,39 +8,56 @@
     name="description"
     content="Join NEPA TTRPG Club at the Carbondale Public Library. New players welcome. Start with one quick survey and begin your adventure."
   />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
     :root {
-      --bg: #0d0820;
-      --bg2: #171034;
-      --panel: rgba(18, 12, 42, 0.92);
-      --panel-soft: rgba(255, 255, 255, 0.04);
-      --border: rgba(255, 255, 255, 0.1);
-      --text: #f7f4ff;
-      --muted: #d6cfff;
-      --gold: #f6cf62;
-      --gold-dark: #d1a62f;
-      --shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
-      --radius: 24px;
-      --max: 1180px;
+      --bg-1: #0c0820;
+      --bg-2: #160f34;
+      --panel: rgba(16, 10, 38, 0.9);
+      --panel-soft: rgba(255, 255, 255, 0.045);
+      --panel-border: rgba(255, 255, 255, 0.1);
+      --text: #f8f6ff;
+      --muted: #d7cff9;
+      --gold: #f6d36a;
+      --gold-2: #ffd97d;
+      --violet-glow: rgba(113, 76, 255, 0.18);
+      --shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max-width: 1200px;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: "Inter", Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top center, rgba(95, 52, 201, 0.22), transparent 30%),
-        linear-gradient(180deg, #140d31 0%, #0f0a24 55%, #0b081a 100%);
-      line-height: 1.5;
+        radial-gradient(circle at top center, rgba(124, 58, 237, 0.22), transparent 28%),
+        radial-gradient(circle at 20% 20%, rgba(255, 217, 125, 0.08), transparent 18%),
+        linear-gradient(180deg, #140d31 0%, #0f0a25 48%, #090613 100%);
+      line-height: 1.55;
+      overflow-x: hidden;
     }
 
     img {
       display: block;
-      max-width: 100%;
+      width: 100%;
     }
 
     a {
@@ -49,115 +66,87 @@
     }
 
     .wrap {
-      width: min(var(--max), calc(100% - 32px));
+      width: min(var(--max-width), calc(100% - 32px));
       margin: 0 auto;
     }
 
-    .hero {
-      padding: 26px 0 48px;
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 14px 0;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(8, 6, 18, 0.85), rgba(8, 6, 18, 0.3));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .hero-card {
-      background: linear-gradient(180deg, rgba(33, 21, 74, 0.95), rgba(13, 9, 32, 0.97));
-      border: 1px solid var(--border);
-      border-radius: 30px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-    }
-
-    .club-header {
-      text-align: center;
-      padding: 30px 20px 12px;
-    }
-
-    .club-header .eyebrow {
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .club-header h1 {
-      margin: 0;
-      font-size: clamp(32px, 5vw, 64px);
-      line-height: 1.02;
-    }
-
-    .hero-image-wrap {
-      padding: 0 18px;
-    }
-
-    .hero-image {
-      width: 100%;
-      aspect-ratio: 16 / 8.5;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 22px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: #1b1538;
-    }
-
-    .hero-content {
-      padding: 24px 22px 30px;
-      text-align: center;
-    }
-
-    .hero-content h2 {
-      margin: 0 0 14px;
-      font-size: clamp(30px, 5vw, 68px);
-      line-height: 0.98;
-      letter-spacing: -1px;
-    }
-
-    .hero-content p {
-      max-width: 760px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: clamp(17px, 2vw, 22px);
-    }
-
-    .feature-band {
-      margin: 28px auto 0;
-      max-width: 940px;
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-    }
-
-    .feature-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 18px 12px;
-      min-height: 95px;
+    .topbar-inner {
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: 700;
-      color: #fff;
+      justify-content: space-between;
+      gap: 14px;
     }
 
-    .hero-actions {
-      margin-top: 28px;
+    .brand {
       display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.12);
+      background: #120d2a;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      min-width: 0;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 17px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .topbar-link {
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 14px;
+      font-weight: 700;
     }
 
     .btn {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
-      min-width: 220px;
-      padding: 16px 24px;
+      justify-content: center;
+      padding: 15px 24px;
       border-radius: 999px;
-      font-size: 18px;
-      font-weight: 700;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-weight: 800;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      border: 1px solid transparent;
     }
 
     .btn:hover {
@@ -165,58 +154,285 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--gold), #ffe089);
-      color: #221600;
-      box-shadow: 0 14px 28px rgba(246, 207, 98, 0.24);
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #241700;
+      box-shadow: 0 16px 28px rgba(246, 211, 106, 0.22);
     }
 
     .btn-secondary {
       background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
+      border-color: rgba(255,255,255,0.1);
       color: var(--text);
     }
 
-    .intro-note {
-      margin-top: 24px;
+    .hero {
+      padding: 26px 0 52px;
+    }
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        radial-gradient(circle at top center, rgba(255, 217, 125, 0.1), transparent 26%),
+        linear-gradient(180deg, rgba(27, 18, 63, 0.96), rgba(10, 7, 24, 0.98));
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent),
+        radial-gradient(circle at center, transparent 60%, rgba(255,255,255,0.025));
+    }
+
+    .hero-eyebrow {
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: 2.4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 800;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .club-name {
+      font-family: "Cinzel", serif;
+      text-align: center;
+      font-size: clamp(30px, 5vw, 58px);
+      line-height: 1;
+      margin: 0 0 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-image-shell {
+      position: relative;
+      z-index: 1;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #130d2c;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+    }
+
+    .hero-image {
+      aspect-ratio: 16 / 8;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(5,4,14,0.06), rgba(5,4,14,0.18)),
+        linear-gradient(0deg, rgba(5,4,14,0.08), transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 28px 8px 8px;
+    }
+
+    .hero-title {
+      margin: 0;
+      font-family: "Cinzel", serif;
+      font-size: clamp(40px, 7vw, 88px);
+      line-height: 0.92;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 18px auto 0;
       color: var(--muted);
-      font-size: 18px;
+      font-size: clamp(17px, 2vw, 22px);
+    }
+
+    .hero-feature-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin: 28px auto 0;
+      max-width: 980px;
+    }
+
+    .hero-feature {
+      padding: 18px 14px;
+      min-height: 94px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.09);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hero-note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 16px;
     }
 
     .section {
-      padding: 0 0 46px;
+      padding: 0 0 52px;
     }
 
-    .panel {
+    .section-card {
       background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
-      padding: 28px;
+      overflow: hidden;
+    }
+
+    .section-header {
+      padding: 30px 24px 0;
+      text-align: center;
     }
 
     .section-title {
-      margin: 0 0 10px;
-      text-align: center;
-      font-size: clamp(26px, 4vw, 42px);
+      margin: 0;
+      font-family: "Cinzel", serif;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.02;
     }
 
     .section-subtitle {
-      margin: 0 auto 24px;
+      margin: 10px auto 0;
       max-width: 760px;
-      text-align: center;
       color: var(--muted);
+      font-size: 17px;
+    }
+
+    .story-grid {
+      display: grid;
+      gap: 22px;
+      padding: 28px 22px 22px;
+    }
+
+    .story-row {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+      align-items: stretch;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.025));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .story-row.reverse {
+      grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    .story-row.reverse .story-image-wrap {
+      order: 2;
+    }
+
+    .story-row.reverse .story-copy {
+      order: 1;
+    }
+
+    .story-image-wrap {
+      position: relative;
+      min-height: 360px;
+      background: #120d2a;
+    }
+
+    .story-image {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .story-copy {
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(circle at top left, rgba(255,217,125,0.07), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    }
+
+    .story-kicker {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .story-copy h3 {
+      margin: 0 0 12px;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.05;
+      text-wrap: balance;
+    }
+
+    .story-copy p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .story-caption {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 4px;
+      padding: 10px 14px;
+      width: fit-content;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+      font-weight: 700;
+      color: #f3ecff;
+    }
+
+    .welcome-panel,
+    .steps-panel,
+    .cta-panel {
+      padding: 30px 24px;
     }
 
     .welcome-grid {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
-      gap: 24px;
+      gap: 20px;
       align-items: center;
     }
 
     .welcome-copy h3 {
       margin: 0 0 12px;
-      font-size: clamp(24px, 3vw, 34px);
+      font-size: clamp(24px, 3vw, 36px);
     }
 
     .welcome-copy p {
@@ -226,17 +442,28 @@
     }
 
     .welcome-box {
-      border: 1px solid var(--border);
-      border-radius: 20px;
       padding: 22px;
-      background: linear-gradient(180deg, rgba(246,207,98,0.1), rgba(255,255,255,0.03));
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(246,211,106,0.11), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .welcome-box strong {
       display: block;
       margin-bottom: 8px;
-      font-size: 20px;
       color: var(--gold);
+      font-size: 20px;
+    }
+
+    .steps-panel .section-title,
+    .cta-panel .section-title {
+      text-align: center;
+    }
+
+    .steps-panel .section-subtitle,
+    .cta-panel .section-subtitle {
+      text-align: center;
+      margin-bottom: 24px;
     }
 
     .steps-grid {
@@ -245,120 +472,184 @@
       gap: 18px;
     }
 
-    .step {
-      border: 1px solid var(--border);
-      border-radius: 20px;
+    .step-card {
       padding: 22px;
+      border-radius: 20px;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .step-number {
       width: 46px;
       height: 46px;
-      border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #271700;
       font-weight: 800;
-      background: linear-gradient(135deg, var(--gold), #ffe089);
-      color: #211500;
-      box-shadow: 0 12px 24px rgba(246,207,98,0.22);
+      box-shadow: 0 12px 24px rgba(246,211,106,0.24);
+      margin-bottom: 14px;
     }
 
-    .step h4 {
+    .step-card h4 {
       margin: 0 0 10px;
       font-size: 22px;
     }
 
-    .step p {
+    .step-card p {
       margin: 0;
       color: var(--muted);
+      font-size: 15px;
     }
 
     .cta-panel {
       text-align: center;
     }
 
-    .cta-panel h3 {
-      margin: 0 0 10px;
-      font-size: clamp(26px, 4vw, 40px);
-    }
-
-    .cta-panel p {
-      margin: 0 auto 22px;
-      max-width: 720px;
-      color: var(--muted);
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
     }
 
     footer {
       padding: 0 0 36px;
       text-align: center;
-      color: #b7abd8;
+      color: #b9aedf;
       font-size: 14px;
     }
 
     @media (max-width: 980px) {
-      .feature-band {
+      .hero-feature-row {
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .story-row,
+      .story-row.reverse,
       .welcome-grid,
       .steps-grid {
         grid-template-columns: 1fr;
+      }
+
+      .story-row.reverse .story-image-wrap,
+      .story-row.reverse .story-copy {
+        order: initial;
       }
     }
 
     @media (max-width: 640px) {
       .wrap {
-        width: min(var(--max), calc(100% - 20px));
+        width: min(var(--max-width), calc(100% - 20px));
       }
 
-      .hero-content h2 {
-        font-size: clamp(34px, 12vw, 56px);
+      .topbar-inner {
+        flex-direction: column;
+        align-items: stretch;
       }
 
-      .feature-band {
+      .brand {
+        justify-content: center;
+      }
+
+      .brand-text {
+        text-align: center;
+      }
+
+      .topbar-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .topbar-link,
+      .btn {
+        width: 100%;
+      }
+
+      .hero-feature-row {
         grid-template-columns: 1fr;
       }
 
-      .btn {
-        width: 100%;
+      .hero-card,
+      .section-header,
+      .welcome-panel,
+      .steps-panel,
+      .cta-panel {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .story-grid {
+        padding: 16px;
+      }
+
+      .story-copy {
+        padding: 22px 18px;
+      }
+
+      .story-image-wrap {
+        min-height: 280px;
       }
     }
   </style>
 </head>
 <body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <div class="brand">
+          <img src="ttrpg-logo.png" alt="NEPA TTRPG Club logo" class="brand-logo" />
+          <div class="brand-text">
+            <strong>NEPA TTRPG Club</strong>
+            <span>Carbondale Public Library</span>
+          </div>
+        </div>
+
+        <div class="topbar-actions">
+          <a class="topbar-link" href="#how-it-works">How It Works</a>
+          <a
+            class="btn btn-primary"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Begin Your Quest
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
   <main>
     <section class="hero">
       <div class="wrap">
         <div class="hero-card">
-          <div class="club-header">
-            <div class="eyebrow">Be the Hero of a Shared Story</div>
-            <h1>NEPA TTRPG Club</h1>
-          </div>
+          <div class="hero-eyebrow">Be the Hero of a Shared Story</div>
+          <h1 class="club-name">NEPA TTRPG Club</h1>
 
-          <div class="hero-image-wrap">
+          <div class="hero-image-shell">
             <img
               class="hero-image"
               src="hero-party.jpg"
               alt="NEPA TTRPG Club gathered around the table for an adventure"
             />
+            <div class="hero-overlay"></div>
           </div>
 
           <div class="hero-content">
-            <h2>QUESTS AWAIT.<br>HEROES NEEDED.</h2>
-            <p>
+            <h2 class="hero-title">Quests Await.<br />Heroes Needed.</h2>
+            <p class="hero-copy">
               Join our Quest Guild for amazing adventures, teamwork, epic battles, and friends who get it.
               Perfect for new adventurers.
             </p>
 
-            <div class="feature-band">
-              <div class="feature-card">Young Heroes</div>
-              <div class="feature-card">Seasoned Adventurers</div>
-              <div class="feature-card">All Skill Levels</div>
-              <div class="feature-card">Epic Battles</div>
-              <div class="feature-card">Amazing Friends</div>
+            <div class="hero-feature-row">
+              <div class="hero-feature">Young Heroes</div>
+              <div class="hero-feature">Seasoned Adventurers</div>
+              <div class="hero-feature">All Skill Levels</div>
+              <div class="hero-feature">Epic Battles</div>
+              <div class="hero-feature">Amazing Friends</div>
             </div>
 
             <div class="hero-actions">
@@ -373,7 +664,7 @@
               <a class="btn btn-secondary" href="#how-it-works">See How It Works</a>
             </div>
 
-            <div class="intro-note">
+            <div class="hero-note">
               One quick survey to get started. Tell us your age group, and we will send the right age-based survey after that.
             </div>
           </div>
@@ -383,19 +674,106 @@
 
     <section class="section">
       <div class="wrap">
-        <div class="panel">
+        <div class="section-card">
+          <div class="section-header">
+            <h2 class="section-title">A Club Built for Shared Stories</h2>
+            <p class="section-subtitle">
+              Scroll down and step into the kind of adventures, friendships, and strange everyday magic that make tabletop games unforgettable.
+            </p>
+          </div>
+
+          <div class="story-grid">
+            <article class="story-row">
+              <div class="story-image-wrap">
+                <img
+                  class="story-image"
+                  src="scene-11-bard.jpg"
+                  alt="A real-world subway moment with fantasy energy"
+                />
+              </div>
+              <div class="story-copy">
+                <div class="story-kicker">Real Life, Fantasy Heart</div>
+                <h3>Adventure Can Start in the Middle of an Ordinary Day</h3>
+                <p>
+                  Tabletop roleplaying turns the familiar into something magical. A train ride, a conversation, a quiet moment, all of it can become part of a bigger story when the right group sits down together.
+                </p>
+                <div class="story-caption">Mundane life meets heroic imagination</div>
+              </div>
+            </article>
+
+            <article class="story-row reverse">
+              <div class="story-image-wrap">
+                <img
+                  class="story-image"
+                  src="scene-12-ruby.jpg"
+                  alt="A dramatic library character full of personality"
+                />
+              </div>
+              <div class="story-copy">
+                <div class="story-kicker">Big Personalities Welcome</div>
+                <h3>Funny, Dramatic, Clever, Bold. Your Character Can Be All of It.</h3>
+                <p>
+                  Some players love mystery. Some love chaos. Some bring heart, humor, or absolute gremlin energy. There is room at the table for all kinds of adventurers and all kinds of stories.
+                </p>
+                <div class="story-caption">Every table becomes its own legend</div>
+              </div>
+            </article>
+
+            <article class="story-row">
+              <div class="story-image-wrap">
+                <img
+                  class="story-image"
+                  src="scene-08-wizard.jpg"
+                  alt="A magical everyday moment with a wizard reflection"
+                />
+              </div>
+              <div class="story-copy">
+                <div class="story-kicker">New Players Belong Here</div>
+                <h3>You Do Not Need Experience to Feel Like a Hero</h3>
+                <p>
+                  Never played before? Great. We help new players learn the basics, understand the rules, and find their footing. You do not need to know everything before you begin. You just need curiosity.
+                </p>
+                <div class="story-caption">Start where you are. Level up from there.</div>
+              </div>
+            </article>
+
+            <article class="story-row reverse">
+              <div class="story-image-wrap">
+                <img
+                  class="story-image"
+                  src="scene-03-it.jpg"
+                  alt="A strange office scene with fantasy energy"
+                />
+              </div>
+              <div class="story-copy">
+                <div class="story-kicker">Unexpected Fun</div>
+                <h3>Sometimes the Best Moments Are the Ones Nobody Saw Coming</h3>
+                <p>
+                  A great campaign has danger, laughs, weird surprises, wild plans, and stories your group will talk about long after the dice stop rolling. That is the kind of table energy we love building.
+                </p>
+                <div class="story-caption">Epic battles. Amazing friends. Memorable chaos.</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-card welcome-panel">
           <div class="welcome-grid">
             <div class="welcome-copy">
               <h3>Welcome, Adventurer</h3>
               <p>
-                Never played before? That is awesome. You do not need experience, fancy books, or a perfect character idea.
+                Never played before? That is awesome. You do not need experience, fancy books, or a perfect character already built.
                 Bring your imagination and we will help with the rest.
               </p>
             </div>
 
             <div class="welcome-box">
               <strong>No Experience Needed</strong>
-              We teach new players, help people learn the rules, and make sure your first adventure feels exciting instead of confusing.
+              We help new players learn the rules, get comfortable at the table, and start their first adventure without feeling lost.
             </div>
           </div>
         </div>
@@ -404,30 +782,30 @@
 
     <section class="section" id="how-it-works">
       <div class="wrap">
-        <div class="panel">
+        <div class="section-card steps-panel">
           <h2 class="section-title">How It Works</h2>
           <p class="section-subtitle">
-            Start simple, tell us what kind of adventure fits you, and get ready to join the party.
+            Three simple steps stand between you and your first quest.
           </p>
 
           <div class="steps-grid">
-            <div class="step">
+            <div class="step-card">
               <div class="step-number">1</div>
               <h4>Start Your Survey</h4>
               <p>
-                Fill out one quick form so we know if you are joining as a young hero, teen, adult, or family group.
+                Fill out one quick form so we know whether you are joining as a young hero, teen, adult, or family group.
               </p>
             </div>
 
-            <div class="step">
+            <div class="step-card">
               <div class="step-number">2</div>
               <h4>Shape Your Adventure</h4>
               <p>
-                Tell us what sounds exciting to you, like dragons, mystery, magic, big battles, silly moments, or clever teamwork.
+                Tell us what sounds exciting to you, like dragons, mystery, magic, clever teamwork, big battles, or funny moments.
               </p>
             </div>
 
-            <div class="step">
+            <div class="step-card">
               <div class="step-number">3</div>
               <h4>Level Up &amp; Play</h4>
               <p>
@@ -441,28 +819,29 @@
 
     <section class="section">
       <div class="wrap">
-        <div class="panel cta-panel">
-          <h3>Ready to Begin?</h3>
-          <p>
+        <div class="section-card cta-panel">
+          <h2 class="section-title">Ready to Begin?</h2>
+          <p class="section-subtitle">
             Fill out the intro survey and take the first step toward your next great story.
           </p>
-          <a
-            class="btn btn-primary"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open the Survey
-          </a>
+
+          <div class="cta-actions">
+            <a
+              class="btn btn-primary"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open the Survey
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">
-      © 2026 NEPA TTRPG Club • Carbondale Public Library
-    </div>
+    <div class="wrap">© 2026 NEPA TTRPG Club • Carbondale Public Library</div>
   </footer>
 </body>
 </html>
