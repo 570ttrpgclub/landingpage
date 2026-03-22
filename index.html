@@ -1,247 +1,1100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEPA TTRPG Club</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEPA TTRPG Club | Build Your Party. Share the Adventure.</title>
+  <meta
+    name="description"
+    content="NEPA TTRPG Club is a welcoming tabletop role-playing game club for teens ages 14 to 17 and adults 18+. Learn D&D 5e (2014), play in a safe and fun environment, and grow your character to Level 5."
+  />
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
-<style>
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #0c0820;
-  color: white;
-}
+  <style>
+    :root {
+      --bg-dark: #090613;
+      --bg-purple: #140d2f;
+      --ink: #f7f3ea;
+      --muted: #d5cfc3;
+      --gold: #d8b25a;
+      --gold-light: #f1d48a;
+      --parchment: #e6d3a6;
+      --parchment-2: #d7bf87;
+      --parchment-ink: #2f2112;
+      --card-dark: rgba(19, 12, 42, 0.92);
+      --line: rgba(255, 255, 255, 0.08);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max-width: 1220px;
+    }
 
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-h1,h2,h3 {
-  font-family: 'Cinzel', serif;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.hero {
-  text-align: center;
-  padding: 40px 20px;
-}
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Inter", Arial, sans-serif;
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at top center, rgba(111, 66, 193, 0.18), transparent 26%),
+        radial-gradient(circle at 80% 20%, rgba(216, 178, 90, 0.08), transparent 14%),
+        linear-gradient(180deg, #1a113b 0%, #0f0b22 40%, #08050f 100%);
+      overflow-x: hidden;
+    }
 
-.hero img {
-  width: 100%;
-  border-radius: 20px;
-  margin-bottom: 20px;
-}
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent 0,
+          transparent 3px,
+          rgba(255,255,255,0.02) 4px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent 0,
+          transparent 5px,
+          rgba(255,255,255,0.015) 6px
+        );
+      mix-blend-mode: screen;
+    }
 
-.btn {
-  padding: 14px 24px;
-  border-radius: 30px;
-  margin: 10px;
-  display: inline-block;
-  font-weight: bold;
-}
+    img {
+      display: block;
+      width: 100%;
+    }
 
-.primary {
-  background: gold;
-  color: black;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.secondary {
-  background: #222;
-}
+    .wrap {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-.section {
-  padding: 60px 0;
-}
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 14px 0;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(180deg, rgba(8, 6, 17, 0.88), rgba(8, 6, 17, 0.38));
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
 
-.grid {
-  display: grid;
-  gap: 20px;
-}
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
 
-.grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
 
-.card {
-  background: #151030;
-  padding: 20px;
-  border-radius: 15px;
-}
+    .brand-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.12);
+      box-shadow: 0 0 0 5px rgba(255,255,255,0.03);
+      background: #1b123a;
+      flex-shrink: 0;
+    }
 
-.card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
+    .brand-text strong {
+      display: block;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
 
-.footer {
-  text-align: center;
-  padding: 40px 20px;
-  color: #aaa;
-}
-</style>
+    .brand-text span {
+      display: block;
+      font-size: 12px;
+      color: var(--gold-light);
+      line-height: 1.2;
+      margin-top: 2px;
+      letter-spacing: 0.3px;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .top-link,
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 999px;
+      font-weight: 800;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .top-link {
+      padding: 11px 16px;
+      font-size: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .btn {
+      padding: 15px 24px;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover,
+    .top-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #291b08;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      box-shadow: 0 16px 28px rgba(216, 178, 90, 0.22);
+    }
+
+    .btn-secondary {
+      color: var(--ink);
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.09);
+    }
+
+    .hero {
+      padding: 28px 0 56px;
+    }
+
+    .hero-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 36px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      background:
+        radial-gradient(circle at top center, rgba(241, 212, 138, 0.11), transparent 30%),
+        linear-gradient(180deg, rgba(31, 20, 67, 0.98), rgba(8, 5, 15, 0.99));
+      padding: 24px;
+    }
+
+    .hero-shell::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, transparent, rgba(255,255,255,0.025), transparent),
+        radial-gradient(circle at center, transparent 56%, rgba(255,255,255,0.02));
+    }
+
+    .hero-kicker {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 2.4px;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .hero-title-small {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 18px;
+      text-align: center;
+      font-family: "Cinzel", serif;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1;
+    }
+
+    .hero-image-frame {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.04),
+        0 20px 40px rgba(0,0,0,0.2);
+      background: #120c29;
+    }
+
+    .hero-image {
+      aspect-ratio: 16 / 8.1;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(8,6,17,0.14), rgba(8,6,17,0.35)),
+        radial-gradient(circle at center, transparent 38%, rgba(0,0,0,0.16));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 30px 10px 8px;
+    }
+
+    .hero-title {
+      margin: 0;
+      font-family: "Cinzel", serif;
+      text-transform: uppercase;
+      font-size: clamp(40px, 7vw, 92px);
+      line-height: 0.92;
+      letter-spacing: -1px;
+      text-wrap: balance;
+    }
+
+    .hero-copy {
+      max-width: 860px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 22px);
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .section {
+      padding: 0 0 54px;
+    }
+
+    .panel {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent 40%);
+    }
+
+    .section-head {
+      padding: 34px 24px 0;
+      text-align: center;
+    }
+
+    .section-title {
+      margin: 0;
+      font-family: "Cinzel", serif;
+      font-size: clamp(30px, 4vw, 50px);
+      line-height: 1.04;
+    }
+
+    .section-subtitle {
+      margin: 12px auto 0;
+      max-width: 860px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .content-pad {
+      padding: 30px 24px;
+    }
+
+    .parchment-block {
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 18%),
+        linear-gradient(180deg, var(--parchment), var(--parchment-2));
+      color: var(--parchment-ink);
+      border-radius: 22px;
+      border: 1px solid rgba(94, 69, 33, 0.3);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.18),
+        0 18px 30px rgba(0,0,0,0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .parchment-block::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+      pointer-events: none;
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          transparent 0,
+          transparent 6px,
+          rgba(68, 45, 18, 0.12) 7px
+        );
+      mix-blend-mode: multiply;
+    }
+
+    .parchment-inner {
+      position: relative;
+      z-index: 1;
+      padding: 26px;
+    }
+
+    .parchment-title {
+      margin: 0 0 12px;
+      font-family: "Cinzel", serif;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.08;
+    }
+
+    .parchment-text {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .icon-row {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .icon-card {
+      min-height: 98px;
+      padding: 18px 14px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .story-grid {
+      display: grid;
+      gap: 22px;
+      padding: 28px 22px 22px;
+    }
+
+    .story-row {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 20px;
+      align-items: stretch;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .story-row.reverse {
+      grid-template-columns: 0.88fr 1.12fr;
+    }
+
+    .story-row.reverse .story-image-wrap {
+      order: 2;
+    }
+
+    .story-row.reverse .story-copy {
+      order: 1;
+    }
+
+    .story-image-wrap {
+      min-height: 360px;
+      background: #120d2a;
+    }
+
+    .story-image {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .story-copy {
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(circle at top left, rgba(241, 212, 138, 0.07), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+    }
+
+    .story-kicker {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .story-copy h3 {
+      margin: 0 0 12px;
+      font-family: "Cinzel", serif;
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1.08;
+    }
+
+    .story-copy p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .story-tag {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .rule-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+    }
+
+    .rule-card,
+    .plain-card,
+    .step-card,
+    .meeting-card,
+    .contact-card,
+    .email-card {
+      padding: 22px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .rule-card h3,
+    .plain-card h3,
+    .step-card h4,
+    .meeting-card h4,
+    .contact-card h4,
+    .email-card h4 {
+      margin: 0 0 12px;
+      font-family: "Cinzel", serif;
+    }
+
+    .rule-card p,
+    .plain-card p,
+    .plain-card li,
+    .step-card p,
+    .meeting-card p,
+    .meeting-card li,
+    .contact-item span,
+    .contact-item a {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .plain-card ul,
+    .meeting-card ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .step-grid,
+    .meeting-grid,
+    .contact-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .step-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .meeting-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .step-number {
+      width: 46px;
+      height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: #2b1c08;
+      font-weight: 800;
+      box-shadow: 0 12px 24px rgba(216, 178, 90, 0.22);
+      margin-bottom: 14px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .email-preview {
+      margin: 0;
+      white-space: pre-wrap;
+      background: rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 18px;
+      color: #f7f4ea;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .email-actions,
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .cta-panel {
+      text-align: center;
+      padding: 34px 24px;
+    }
+
+    footer {
+      padding: 0 0 36px;
+      text-align: center;
+      color: #b9aedf;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1100px) {
+      .icon-row {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .icon-row,
+      .story-row,
+      .story-row.reverse,
+      .rule-grid,
+      .step-grid,
+      .meeting-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .story-row.reverse .story-image-wrap,
+      .story-row.reverse .story-copy {
+        order: initial;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(var(--max-width), calc(100% - 20px));
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .brand {
+        justify-content: center;
+      }
+
+      .brand-text {
+        text-align: center;
+      }
+
+      .topbar-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .top-link,
+      .btn {
+        width: 100%;
+      }
+
+      .icon-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-shell,
+      .content-pad,
+      .section-head,
+      .cta-panel {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .story-grid {
+        padding: 16px;
+      }
+
+      .story-copy,
+      .parchment-inner {
+        padding: 22px 18px;
+      }
+
+      .story-image-wrap {
+        min-height: 280px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="topbar-inner">
+        <div class="brand">
+          <img src="images/hero-party.jpg" alt="NEPA TTRPG Club crest" class="brand-badge" />
+          <div class="brand-text">
+            <strong>NEPA TTRPG Club</strong>
+            <span>Build Your Party. Share the Adventure.</span>
+          </div>
+        </div>
 
-<div class="container">
+        <div class="topbar-actions">
+          <a class="top-link" href="#contact">Contact Info</a>
+          <a
+            class="btn btn-primary"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Start the Survey
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<!-- HERO -->
-<section class="hero">
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-shell">
+          <div class="hero-kicker">A Safe and Fun Place to Act Out Your Heroic Fantasy</div>
+          <h1 class="hero-title-small">NEPA TTRPG Club</h1>
 
-  <h2>NEPA TTRPG Club</h2>
+          <div class="hero-image-frame">
+            <img
+              class="hero-image"
+              src="images/hero-party.jpg"
+              alt="Players around a table playing Dungeons and Dragons"
+            />
+            <div class="hero-image-overlay"></div>
+          </div>
 
-  <img src="images/hero-party.jpg" alt="Players at a tabletop game">
+          <div class="hero-content">
+            <h2 class="hero-title">Quests Await.<br />Heroes Needed.</h2>
+            <p class="hero-copy">
+              Join a tabletop role-playing game club where teens and adults can create characters, roll dice,
+              explore fantasy worlds, and grow into confident D&amp;D players in a welcoming community.
+            </p>
 
-  <h1>Build Your Party. Share the Adventure.</h1>
+            <div class="hero-actions">
+              <a class="btn btn-secondary" href="#how-it-works">See How It Works</a>
+              <a
+                class="btn btn-primary"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Begin Your Quest
+              </a>
+            </div>
 
-  <p>
-    A tabletop role-playing game club where teens and adults create characters,
-    roll dice, and tell stories together through Dungeons & Dragons.
-  </p>
+            <div class="hero-note">
+              We have not scheduled the first club meeting time yet, so the best first step is to fill out the interest survey and stay connected.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div>
-    <a class="btn secondary" href="#how">See How It Works</a>
-    <a class="btn primary" href="YOUR_SURVEY_LINK">Begin Your Quest</a>
-  </div>
+    <section class="section">
+      <div class="wrap">
+        <div class="panel">
+          <div class="section-head">
+            <h2 class="section-title">What Is a TTRPG?</h2>
+            <p class="section-subtitle">
+              A TTRPG, or tabletop role-playing game, is a game where players gather around a table and step into the role of characters in a shared story.
+              In this club, we play Dungeons &amp; Dragons 5th Edition (2014) with some light homebrew elements to keep things flexible and fun.
+            </p>
+          </div>
 
-</section>
+          <div class="content-pad">
+            <div class="parchment-block">
+              <div class="parchment-inner">
+                <h3 class="parchment-title">What Happens at the Table?</h3>
+                <p class="parchment-text">
+                  You create a character, work with a group, solve problems, face monsters, make choices, and shape the story together.
+                  Some sessions are funny. Some are intense. Some are full of mystery, danger, teamwork, and unexpected heroics.
+                </p>
+              </div>
+            </div>
 
-<!-- WHAT IS TTRPG -->
-<section class="section">
+            <div class="icon-row">
+              <div class="icon-card">Teens Ages 14 to 17</div>
+              <div class="icon-card">Adults 18+</div>
+              <div class="icon-card">New Players Welcome</div>
+              <div class="icon-card">D&amp;D 5e (2014)</div>
+              <div class="icon-card">Light Homebrew</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <h2>What Is a TTRPG?</h2>
+    <section class="section">
+      <div class="wrap">
+        <div class="panel">
+          <div class="section-head">
+            <h2 class="section-title">A Gaming Community Built Around Fun</h2>
+            <p class="section-subtitle">
+              NEPA TTRPG Club is about more than rules and dice. It is about finding your group, learning the game,
+              sharing stories, and having fun in a safe environment where imagination matters.
+            </p>
+          </div>
 
-  <p>
-    A TTRPG (Tabletop Role-Playing Game) is a game where players sit together
-    at a table and take on the roles of characters in a shared story.
-  </p>
+          <div class="story-grid">
+            <article class="story-row">
+              <div class="story-image-wrap">
+                <img
+                  class="story-image"
+                  src="images/scene-10-fighter.jpg"
+                  alt="A grounded but heroic fantasy image"
+                />
+              </div>
+              <div class="story-copy">
+                <div class="story-kicker">Create a Character</div>
+                <h3>Play Someone Brave, Clever, Strange, or Legendary</h3>
+                <p>
+                  D&amp;D lets you step into the role of a hero of your own design. You might be a knight, wizard, rogue, cleric, or something entirely your own.
+                </p>
+                <div class="story-tag">Your imagination becomes part of the world.</div>
+              </div>
+            </article>
 
-  <p>
-    In this club, we play <strong>Dungeons & Dragons 5th Edition (2014)</strong>
-    with some light homebrew elements to keep things flexible and fun.
-  </p>
+            <article class="story-row reverse">
+              <div class="story-image-wrap">
+                <img
+                  class="story-image"
+                  src="images/scene-07-armor.jpg"
+                  alt="Fantasy themed image suggesting adventure and action"
+                />
+              </div>
+              <div class="story-copy">
+                <div class="story-kicker">Play the Game</div>
+                <h3>Roll Dice, Face Challenges, and Work as a Team</h3>
+                <p>
+                  Some moments are tense. Some are hilarious. Some come down to one important choice and one lucky roll.
+                  The fun comes from solving problems together and seeing what happens next.
+                </p>
+                <div class="story-tag">Adventure works best when the whole party joins in.</div>
+              </div>
+            </article>
 
-</section>
+            <article class="story-row">
+              <div class="story-image-wrap">
+                <img
+                  class="story-image"
+                  src="images/scene-08-wizard.jpg"
+                  alt="Magical reflection image with fantasy atmosphere"
+                />
+              </div>
+              <div class="story-copy">
+                <div class="story-kicker">Tell a Story</div>
+                <h3>Build a Shared Fantasy Story with Real People</h3>
+                <p>
+                  Every table creates its own story. You are not just watching fantasy happen. You are shaping it with your decisions, your character, and your group.
+                </p>
+                <div class="story-tag">No two campaigns ever feel exactly the same.</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- WHAT YOU DO -->
-<section class="section grid grid-3">
+    <section class="section">
+      <div class="wrap">
+        <div class="panel content-pad">
+          <div class="rule-grid">
+            <div class="rule-card parchment-block">
+              <div class="parchment-inner">
+                <h3 class="parchment-title">Our Goal</h3>
+                <p class="parchment-text">
+                  Our goal is to help players grow their characters to Level 5. By that point, you should have enough experience to understand the flow of the game,
+                  join other tables confidently, and even feel prepared to start your own table as a Game Master.
+                </p>
+              </div>
+            </div>
 
-  <div class="card">
-    <img src="images/scene-10-fighter.jpg">
-    <h3>Create a Character</h3>
-    <p>Build your own hero, from a powerful wizard to a sneaky rogue.</p>
-  </div>
+            <div class="plain-card">
+              <h3>Who Can Join?</h3>
+              <p>
+                We have two groups of gamers: ages 14 to 17, and adults 18+.
+              </p>
+              <p>
+                New players, returning players, friend groups, families, and experienced players are all welcome.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="card">
-    <img src="images/scene-06-park.jpg">
-    <h3>Play the Game</h3>
-    <p>Roll dice, make decisions, and face challenges as a team.</p>
-  </div>
+    <section class="section" id="how-it-works">
+      <div class="wrap">
+        <div class="panel content-pad">
+          <div class="section-head" style="padding:0 0 24px;">
+            <h2 class="section-title">How to Join</h2>
+            <p class="section-subtitle">
+              We have not scheduled the first club meeting time yet, so the best way to get involved is to complete the interest survey and stay in contact.
+            </p>
+          </div>
 
-  <div class="card">
-    <img src="images/scene-08-wizard.jpg">
-    <h3>Tell a Story</h3>
-    <p>Your choices shape the world and the story you experience together.</p>
-  </div>
+          <div class="step-grid">
+            <div class="step-card">
+              <div class="step-number">1</div>
+              <h4>Fill Out the Survey</h4>
+              <p>
+                Start with one quick sign-up form so we can learn who is interested, what age group you are in, and what kind of games you want to play.
+              </p>
+            </div>
 
-</section>
+            <div class="step-card">
+              <div class="step-number">2</div>
+              <h4>Tell Us More About Your Game Style</h4>
+              <p>
+                After you sign up, we will send you a more in-depth survey to learn what kind of game you would like to be part of and other useful details.
+                We use that information to help shape the club, pair you into a table of like-minded gamers, and know what to share with you.
+              </p>
+            </div>
 
-<!-- CLUB GOAL -->
-<section class="section">
+            <div class="step-card">
+              <div class="step-number">3</div>
+              <h4>Join the Adventure</h4>
+              <p>
+                Once the schedule is set, you will be ready to meet other players, join your group, and begin building your place in the community.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <h2>Our Goal</h2>
+    <section class="section">
+      <div class="wrap">
+        <div class="panel content-pad">
+          <div class="section-head" style="padding:0 0 24px;">
+            <h2 class="section-title">Meeting Location</h2>
+            <p class="section-subtitle">
+              Club meetings will be held at the location below. Meeting dates and times are still being organized, so please sign up through the survey to stay updated.
+            </p>
+          </div>
 
-  <p>
-    Our goal is to help players grow their characters to <strong>Level 5</strong>.
-  </p>
+          <div class="meeting-grid">
+            <div class="meeting-card">
+              <h4>NEPA TTRPG Club: Carbondale</h4>
+              <p>
+                Meeting location:<br />
+                Carbondale Public Library<br />
+                5 N Main St, Carbondale, PA 18407
+              </p>
+              <p>
+                Library phone: <a href="tel:15702824281">(570) 282-4281</a>
+              </p>
+            </div>
 
-  <p>
-    By that point, you will have enough experience to:
-  </p>
+            <div class="meeting-card">
+              <h4>Library Hours</h4>
+              <ul>
+                <li>Monday: 10 AM–7 PM</li>
+                <li>Tuesday: 10 AM–7 PM</li>
+                <li>Wednesday: 10 AM–7 PM</li>
+                <li>Thursday: 10 AM–7 PM</li>
+                <li>Friday: 10 AM–5 PM</li>
+                <li>Saturday: 10 AM–5 PM</li>
+                <li>Sunday: Closed</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <ul>
-    <li>Join other tables confidently</li>
-    <li>Understand the rules and flow of the game</li>
-    <li>Even start your own game as a Game Master</li>
-  </ul>
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="panel content-pad">
+          <div class="section-head" style="padding:0 0 24px;">
+            <h2 class="section-title">Contact Information</h2>
+            <p class="section-subtitle">
+              Have a question before the first meeting is announced? Reach out directly, or fill out the survey so you can receive updates.
+            </p>
+          </div>
 
-</section>
+          <div class="contact-grid">
+            <div class="contact-card">
+              <h4>Contact Daniel Directly</h4>
 
-<!-- WHO -->
-<section class="section">
+              <div class="contact-list">
+                <div class="contact-item">
+                  <strong>Founder &amp; Head Game Master</strong>
+                  <span>Mr. Daniel J. Vogt</span>
+                </div>
 
-  <h2>Who Can Join?</h2>
+                <div class="contact-item">
+                  <strong>Email</strong>
+                  <a href="mailto:570ttrpgclub@gmail.com">570ttrpgclub@gmail.com</a>
+                </div>
 
-  <p>
-    Ages 14–17 and Adults 18+.
-  </p>
+                <div class="contact-item">
+                  <strong>Survey Link</strong>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Open the NEPA TTRPG Club survey
+                  </a>
+                </div>
+              </div>
+            </div>
 
-  <p>
-    No experience needed. New players, returning players,
-    and experienced players are all welcome.
-  </p>
+            <div class="email-card">
+              <h4>Email Message Template</h4>
+              <pre class="email-preview">To: 570ttrpgclub@gmail.com
+Subject: NEPA TTRPG Club Question
 
-</section>
+Hello,
 
-<!-- HOW -->
-<section id="how" class="section grid grid-3">
+My name is [Your Name].
 
-  <div class="card">
-    <h3>1. Fill Out the Survey</h3>
-    <p>Tell us your age group and interest in the club.</p>
-  </div>
+I am interested in NEPA TTRPG Club and would like to learn more about upcoming meetings, age groups, and how to get involved.
 
-  <div class="card">
-    <h3>2. Get Matched</h3>
-    <p>We group players based on experience and play style.</p>
-  </div>
+I have already filled out the survey / I still need to fill out the survey.
 
-  <div class="card">
-    <h3>3. Start Playing</h3>
-    <p>Join your table and begin your adventure.</p>
-  </div>
+My question is:
+[Write your question here]
 
-</section>
+Thank you,
+[Your Name]</pre>
 
-<!-- LOCATION -->
-<section class="section">
+              <div class="email-actions">
+                <a
+                  class="btn btn-primary"
+                  href="mailto:570ttrpgclub@gmail.com?subject=NEPA%20TTRPG%20Club%20Question&body=Hello%2C%0A%0AMy%20name%20is%20%5BYour%20Name%5D.%0A%0AI%20am%20interested%20in%20NEPA%20TTRPG%20Club%20and%20would%20like%20to%20learn%20more%20about%20upcoming%20meetings%2C%20age%20groups%2C%20and%20how%20to%20get%20involved.%0A%0AI%20have%20already%20filled%20out%20the%20survey%20%2F%20I%20still%20need%20to%20fill%20out%20the%20survey.%0A%0AMy%20question%20is%3A%0A%5BWrite%20your%20question%20here%5D%0A%0AThank%20you%2C%0A%5BYour%20Name%5D"
+                >
+                  Open Email Draft
+                </a>
 
-  <h2>Meeting Location</h2>
+                <a
+                  class="btn btn-secondary"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Fill Out the Survey
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    Carbondale Public Library<br>
-    5 N Main St, Carbondale, PA 18407
-  </p>
+    <section class="section">
+      <div class="wrap">
+        <div class="panel cta-panel">
+          <h2 class="section-title">Ready to Join the Party?</h2>
+          <p class="section-subtitle">
+            Fill out the survey now so you can be part of the first round of club updates, meeting announcements, and future adventures.
+          </p>
 
-  <p>
-    Meeting times are still being scheduled.<br>
-    Please fill out the survey to stay updated.
-  </p>
+          <div class="cta-actions">
+            <a
+              class="btn btn-primary"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open the Survey
+            </a>
+            <a class="btn btn-secondary" href="#contact">Contact Daniel</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-</section>
-
-<!-- CONTACT -->
-<section class="section">
-
-  <h2>Contact</h2>
-
-  <p>
-    Founder & Head Game Master: Mr. Daniel J. Vogt<br>
-    Email: 570ttrpgclub@gmail.com
-  </p>
-
-</section>
-
-<div class="footer">
-  © 2026 NEPA TTRPG Club
-</div>
-
-</div>
-
+  <footer>
+    <div class="wrap">© 2026 NEPA TTRPG Club</div>
+  </footer>
 </body>
 </html>
