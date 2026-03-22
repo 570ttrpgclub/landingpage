@@ -458,7 +458,7 @@
 
     .feature-row {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 20px;
       align-items: stretch;
       overflow: hidden;
@@ -468,7 +468,7 @@
     }
 
     .feature-row.reverse {
-      grid-template-columns: 0.92fr 1.08fr;
+      grid-template-columns: 0.95fr 1.05fr;
     }
 
     .feature-row.reverse .feature-image-wrap {
@@ -480,26 +480,16 @@
     }
 
     .feature-image-wrap {
-      min-height: 420px;
+      height: 420px;
       background: #120d2a;
       overflow: hidden;
     }
 
-    .feature-image-wrap.armor-image-wrap {
-      min-height: 360px;
-      max-height: 360px;
-    }
-
     .feature-image {
+      width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center;
-    }
-
-    .feature-image.armor-image {
-      object-fit: contain;
-      padding: 18px;
-      background: #120d2a;
     }
 
     .feature-copy {
@@ -571,17 +561,15 @@
       font-size: 16px;
     }
 
-    .divider-photo {
+    .ruby-row {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 20px;
+      align-items: stretch;
       overflow: hidden;
       border-radius: 24px;
       border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.16);
-    }
-
-    .divider-photo img {
-      aspect-ratio: 16 / 7;
-      object-fit: cover;
-      object-position: center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
     }
 
     .steps-grid {
@@ -644,7 +632,8 @@
 
     @media (max-width: 1100px) {
       .feature-row,
-      .feature-row.reverse {
+      .feature-row.reverse,
+      .ruby-row {
         grid-template-columns: 1fr;
       }
 
@@ -653,10 +642,8 @@
         order: initial;
       }
 
-      .feature-image-wrap,
-      .feature-image-wrap.armor-image-wrap {
-        min-height: 320px;
-        max-height: none;
+      .feature-image-wrap {
+        height: 360px;
       }
     }
 
@@ -712,9 +699,8 @@
         padding: 22px 18px;
       }
 
-      .feature-image-wrap,
-      .feature-image-wrap.armor-image-wrap {
-        min-height: 260px;
+      .feature-image-wrap {
+        height: 280px;
       }
     }
   </style>
@@ -842,8 +828,8 @@
 
           <div class="feature-stack">
             <article class="feature-row">
-              <div class="feature-image-wrap armor-image-wrap">
-                <img class="feature-image armor-image" src="images/scene-07-armor.jpg" alt="Fantasy character image" />
+              <div class="feature-image-wrap">
+                <img class="feature-image" src="images/scene-07-armor.jpg" alt="Fantasy character image" />
               </div>
               <div class="feature-copy">
                 <div class="feature-kicker">Forge Your Hero</div>
@@ -921,9 +907,22 @@
               </p>
             </div>
 
-            <div class="divider-photo">
-              <img src="images/scene-12-ruby.jpg" alt="Ruby the barbarian in a dramatic fantasy-themed everyday scene" />
-            </div>
+            <article class="ruby-row">
+              <div class="feature-image-wrap">
+                <img class="feature-image" src="images/scene-12-ruby.jpg" alt="Ruby the barbarian" />
+              </div>
+              <div class="feature-copy">
+                <div class="feature-kicker">Find Your Party</div>
+                <h3>Take Your Place at the Table</h3>
+                <p>
+                  Every group starts with a few players, a handful of dice, and the willingness to see what happens next. Over time, that turns into inside jokes, close calls, favorite characters, and stories people keep retelling.
+                </p>
+                <p>
+                  Whether you are showing up for the first time or returning to the hobby, this is where new adventurers become part of the party.
+                </p>
+                <div class="feature-tag">Every party starts somewhere.</div>
+              </div>
+            </article>
           </div>
         </div>
       </div>
