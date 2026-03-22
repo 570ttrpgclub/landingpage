@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NEPA TTRPG Club | Build Your Party. Share the Adventure.</title>
+  <title>NEPA TTRPG Club | Club Info & Contact</title>
   <meta
     name="description"
-    content="NEPA TTRPG Club is a welcoming tabletop role-playing game club for teens ages 14 to 17 and adults 18+. Learn D&D 5e (2014), play in a safe and fun environment, and grow your character to Level 5."
+    content="Meeting location, contact information, library hours, and survey access for NEPA TTRPG Club."
   />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,22 +24,14 @@
       --muted: #d5cfc3;
       --gold: #d8b25a;
       --gold-light: #f1d48a;
-      --parchment: #e6d3a6;
-      --parchment-2: #d7bf87;
-      --parchment-ink: #2f2112;
       --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
       --radius-xl: 28px;
       --radius-lg: 22px;
-      --radius-md: 16px;
-      --max-width: 1220px;
+      --max-width: 1100px;
     }
 
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -49,36 +41,7 @@
       line-height: 1.6;
       background:
         radial-gradient(circle at top center, rgba(111, 66, 193, 0.18), transparent 26%),
-        radial-gradient(circle at 80% 20%, rgba(216, 178, 90, 0.08), transparent 14%),
         linear-gradient(180deg, #1a113b 0%, #0f0b22 40%, #08050f 100%);
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.08;
-      background-image:
-        repeating-linear-gradient(
-          0deg,
-          transparent 0,
-          transparent 3px,
-          rgba(255,255,255,0.02) 4px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          transparent 0,
-          transparent 5px,
-          rgba(255,255,255,0.015) 6px
-        );
-      mix-blend-mode: screen;
-    }
-
-    img {
-      display: block;
-      width: 100%;
     }
 
     a {
@@ -92,11 +55,7 @@
     }
 
     .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      padding: 14px 0;
-      backdrop-filter: blur(12px);
+      padding: 18px 0;
       background: linear-gradient(180deg, rgba(8, 6, 17, 0.88), rgba(8, 6, 17, 0.38));
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
@@ -105,77 +64,32 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
       gap: 12px;
-      min-width: 0;
     }
 
-    .brand-badge {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center;
-      border: 2px solid rgba(255,255,255,0.12);
-      box-shadow: 0 0 0 5px rgba(255,255,255,0.03);
-      background: #1b123a;
-      flex-shrink: 0;
-    }
-
-    .brand-text strong {
+    .brand strong {
       display: block;
-      font-size: 18px;
-      font-weight: 800;
-      line-height: 1.1;
+      font-family: "Cinzel", serif;
+      font-size: 28px;
+      line-height: 1;
     }
 
-    .brand-text span {
+    .brand span {
       display: block;
-      font-size: 12px;
       color: var(--gold-light);
-      line-height: 1.2;
-      margin-top: 2px;
-      letter-spacing: 0.3px;
+      margin-top: 6px;
+      font-size: 14px;
     }
 
-    .topbar-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-shrink: 0;
-    }
-
-    .top-link,
     .btn {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
       border-radius: 999px;
       font-weight: 800;
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .top-link {
-      padding: 11px 16px;
-      font-size: 14px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .btn {
-      padding: 15px 24px;
       border: 1px solid transparent;
-    }
-
-    .btn:hover,
-    .top-link:hover {
-      transform: translateY(-2px);
+      text-align: center;
     }
 
     .btn-primary {
@@ -190,400 +104,66 @@
       border-color: rgba(255,255,255,0.09);
     }
 
-    .hero {
-      padding: 28px 0 56px;
-    }
-
-    .hero-shell {
-      position: relative;
-      overflow: hidden;
-      border-radius: 36px;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: var(--shadow);
-      background:
-        radial-gradient(circle at top center, rgba(241, 212, 138, 0.11), transparent 30%),
-        linear-gradient(180deg, rgba(31, 20, 67, 0.98), rgba(8, 5, 15, 0.99));
-      padding: 24px;
-    }
-
-    .hero-shell::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(90deg, transparent, rgba(255,255,255,0.025), transparent),
-        radial-gradient(circle at center, transparent 56%, rgba(255,255,255,0.02));
-    }
-
-    .hero-title-small {
-      position: relative;
-      z-index: 1;
-      margin: 0;
-      text-align: center;
-      font-family: "Cinzel", serif;
-      font-size: clamp(34px, 5vw, 64px);
-      line-height: 1;
-    }
-
-    .hero-kicker {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      color: var(--gold-light);
-      font-size: clamp(18px, 2.2vw, 30px);
-      font-weight: 800;
-      margin: 14px 0 22px;
-      line-height: 1.15;
-    }
-
-    .hero-image-frame {
-      position: relative;
-      z-index: 1;
-      overflow: hidden;
-      border-radius: 28px;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,0.04),
-        0 20px 40px rgba(0,0,0,0.2);
-      background: #120c29;
-      max-width: 1040px;
-      margin: 0 auto;
-    }
-
-    .hero-image {
-      aspect-ratio: 16 / 8.1;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .hero-image-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(8,6,17,0.14), rgba(8,6,17,0.35)),
-        radial-gradient(circle at center, transparent 38%, rgba(0,0,0,0.16));
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 34px 10px 8px;
-    }
-
-    .hero-title {
-      margin: 0;
-      font-family: "Cinzel", serif;
-      text-transform: uppercase;
-      font-size: clamp(40px, 7vw, 92px);
-      line-height: 0.88;
-      letter-spacing: -1px;
-      text-wrap: balance;
-    }
-
-    .hero-title .line-break {
-      display: block;
-      margin-top: 16px;
-    }
-
-    .hero-copy {
-      max-width: 860px;
-      margin: 22px auto 0;
-      color: var(--muted);
-      font-size: clamp(17px, 2vw, 22px);
-    }
-
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .hero-note {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .section {
-      padding: 0 0 54px;
+    .page {
+      padding: 34px 0 54px;
     }
 
     .panel {
-      position: relative;
       overflow: hidden;
       border-radius: var(--radius-xl);
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: var(--shadow);
+      padding: 30px 24px;
+      margin-bottom: 24px;
     }
 
-    .panel::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: linear-gradient(180deg, rgba(255,255,255,0.015), transparent 40%);
-    }
-
-    .section-head {
-      padding: 34px 24px 0;
+    .title {
+      margin: 0 0 10px;
+      font-family: "Cinzel", serif;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.04;
       text-align: center;
     }
 
-    .section-title {
-      margin: 0;
-      font-family: "Cinzel", serif;
-      font-size: clamp(30px, 4vw, 50px);
-      line-height: 1.04;
-    }
-
-    .section-subtitle {
-      margin: 12px auto 0;
-      max-width: 860px;
+    .subtitle {
+      margin: 0 auto 24px;
+      max-width: 760px;
+      text-align: center;
       color: var(--muted);
       font-size: 17px;
     }
 
-    .content-pad {
-      padding: 30px 24px;
-    }
-
-    .parchment-block {
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 18%),
-        linear-gradient(180deg, var(--parchment), var(--parchment-2));
-      color: var(--parchment-ink);
-      border-radius: 22px;
-      border: 1px solid rgba(94, 69, 33, 0.3);
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,0.18),
-        0 18px 30px rgba(0,0,0,0.18);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .parchment-block::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: 0.12;
-      pointer-events: none;
-      background-image:
-        repeating-linear-gradient(
-          45deg,
-          transparent 0,
-          transparent 6px,
-          rgba(68, 45, 18, 0.12) 7px
-        );
-      mix-blend-mode: multiply;
-    }
-
-    .parchment-inner {
-      position: relative;
-      z-index: 1;
-      padding: 26px;
-    }
-
-    .parchment-title {
-      margin: 0 0 12px;
-      font-family: "Cinzel", serif;
-      font-size: clamp(24px, 3vw, 36px);
-      line-height: 1.08;
-    }
-
-    .parchment-text {
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    .icon-row {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-      margin-top: 26px;
-    }
-
-    .icon-card {
-      min-height: 98px;
-      padding: 18px 14px;
-      border-radius: 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: 700;
-      line-height: 1.3;
-    }
-
-    .story-grid {
-      display: grid;
-      gap: 22px;
-      padding: 28px 22px 22px;
-    }
-
-    .story-row {
-      display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 20px;
-      align-items: stretch;
-      border-radius: 24px;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .story-row.reverse {
-      grid-template-columns: 0.88fr 1.12fr;
-    }
-
-    .story-row.reverse .story-image-wrap {
-      order: 2;
-    }
-
-    .story-row.reverse .story-copy {
-      order: 1;
-    }
-
-    .story-image-wrap {
-      min-height: 340px;
-      background: #120d2a;
-    }
-
-    .story-image {
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .story-copy {
-      padding: 28px 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background:
-        radial-gradient(circle at top left, rgba(241, 212, 138, 0.07), transparent 28%),
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-    }
-
-    .story-kicker {
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .story-copy h3 {
-      margin: 0 0 12px;
-      font-family: "Cinzel", serif;
-      font-size: clamp(24px, 3vw, 38px);
-      line-height: 1.08;
-    }
-
-    .story-copy p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    .story-tag {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .rule-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
       gap: 18px;
+      grid-template-columns: 1fr 1fr;
     }
 
-    .rule-card,
-    .plain-card,
-    .step-card,
-    .meeting-card,
-    .contact-card,
-    .email-card {
+    .card {
       padding: 22px;
       border-radius: 20px;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
       border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .rule-card h3,
-    .plain-card h3,
-    .step-card h4,
-    .meeting-card h4,
-    .contact-card h4,
-    .email-card h4 {
+    .card h2 {
       margin: 0 0 12px;
       font-family: "Cinzel", serif;
+      font-size: 24px;
     }
 
-    .rule-card p,
-    .plain-card p,
-    .plain-card li,
-    .step-card p,
-    .meeting-card p,
-    .meeting-card li,
-    .contact-item span,
-    .contact-item a {
+    .card p,
+    .card li,
+    .card a,
+    .card label {
       color: var(--muted);
       font-size: 15px;
     }
 
-    .plain-card ul,
-    .meeting-card ul {
+    ul {
       margin: 0;
       padding-left: 18px;
-    }
-
-    .step-grid,
-    .meeting-grid,
-    .contact-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .step-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .meeting-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .contact-grid {
-      grid-template-columns: 0.95fr 1.05fr;
-    }
-
-    .step-number {
-      width: 46px;
-      height: 46px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: #2b1c08;
-      font-weight: 800;
-      box-shadow: 0 12px 24px rgba(216, 178, 90, 0.22);
-      margin-bottom: 14px;
     }
 
     .contact-list {
@@ -600,30 +180,32 @@
       letter-spacing: 1px;
     }
 
-    .email-preview {
-      margin: 0;
-      white-space: pre-wrap;
-      background: rgba(0,0,0,0.22);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 18px;
-      color: #f7f4ea;
-      font-size: 15px;
-      line-height: 1.6;
+    form {
+      display: grid;
+      gap: 12px;
     }
 
-    .email-actions,
-    .cta-actions {
+    input,
+    textarea {
+      width: 100%;
+      padding: 14px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.18);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    .button-row {
       display: flex;
-      justify-content: center;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 16px;
-    }
-
-    .cta-panel {
-      text-align: center;
-      padding: 34px 24px;
+      margin-top: 8px;
     }
 
     footer {
@@ -633,32 +215,9 @@
       font-size: 14px;
     }
 
-    @media (max-width: 1100px) {
-      .icon-row {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (max-width: 980px) {
-      .icon-row,
-      .story-row,
-      .story-row.reverse,
-      .rule-grid,
-      .step-grid,
-      .meeting-grid,
-      .contact-grid {
+    @media (max-width: 820px) {
+      .grid {
         grid-template-columns: 1fr;
-      }
-
-      .story-row.reverse .story-image-wrap,
-      .story-row.reverse .story-copy {
-        order: initial;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .wrap {
-        width: min(var(--max-width), calc(100% - 20px));
       }
 
       .topbar-inner {
@@ -666,47 +225,8 @@
         align-items: stretch;
       }
 
-      .brand {
-        justify-content: center;
-      }
-
-      .brand-text {
-        text-align: center;
-      }
-
-      .topbar-actions {
-        width: 100%;
-        flex-direction: column;
-      }
-
-      .top-link,
       .btn {
         width: 100%;
-      }
-
-      .icon-row {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-shell,
-      .content-pad,
-      .section-head,
-      .cta-panel {
-        padding-left: 16px;
-        padding-right: 16px;
-      }
-
-      .story-grid {
-        padding: 16px;
-      }
-
-      .story-copy,
-      .parchment-inner {
-        padding: 22px 18px;
-      }
-
-      .story-image-wrap {
-        min-height: 280px;
       }
     }
   </style>
@@ -716,389 +236,124 @@
     <div class="wrap">
       <div class="topbar-inner">
         <div class="brand">
-          <img src="images/hero-party.jpg" alt="NEPA TTRPG Club crest" class="brand-badge" />
-          <div class="brand-text">
-            <strong>NEPA TTRPG Club</strong>
-            <span>Build Your Party. Share the Adventure.</span>
-          </div>
+          <strong>NEPA TTRPG Club</strong>
+          <span>Club Info, Location, and Contact</span>
         </div>
 
-        <div class="topbar-actions">
-          <a class="top-link" href="#contact">Contact Info</a>
+        <div class="button-row">
+          <a class="btn btn-secondary" href="index.html">Back to Main Page</a>
           <a
             class="btn btn-primary"
             href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Start the Survey
+            Open the Survey
           </a>
         </div>
       </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-shell">
-          <h1 class="hero-title-small">NEPA TTRPG Club</h1>
-          <div class="hero-kicker">A Safe and Fun Place to Act Out Your Heroic Fantasy</div>
+  <main class="page">
+    <div class="wrap">
+      <section class="panel">
+        <h1 class="title">Club Info & Contact</h1>
+        <p class="subtitle">
+          Club meetings will be held at the location below. Meeting dates and times are still being organized, so please sign up through the survey to stay updated.
+        </p>
 
-          <div class="hero-image-frame">
-            <img
-              class="hero-image"
-              src="images/hero-party.jpg"
-              alt="Players around a table playing Dungeons and Dragons"
-            />
-            <div class="hero-image-overlay"></div>
-          </div>
-
-          <div class="hero-content">
-            <h2 class="hero-title">
-              Quests Await.
-              <span class="line-break">Heroes Needed.</span>
-            </h2>
-            <p class="hero-copy">
-              Join a tabletop role-playing game club where teens and adults can create characters, roll dice,
-              explore fantasy worlds, and grow into confident D&amp;D players in a welcoming community.
+        <div class="grid">
+          <div class="card">
+            <h2>Meeting Location</h2>
+            <p>
+              <strong style="color:#f1d48a;">NEPA TTRPG Club: Carbondale</strong><br />
+              Meeting location:<br />
+              Carbondale Public Library<br />
+              5 N Main St, Carbondale, PA 18407
             </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-secondary" href="#how-it-works">See How It Works</a>
-              <a
-                class="btn btn-primary"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Begin Your Quest
-              </a>
-            </div>
-
-            <div class="hero-note">
-              We have not scheduled the first club meeting time yet, so the best first step is to fill out the interest survey and stay connected.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="panel">
-          <div class="section-head">
-            <h2 class="section-title">What Is a TTRPG?</h2>
-            <p class="section-subtitle">
-              A TTRPG, or tabletop role-playing game, is a game where players gather around a table and step into the role of characters in a shared story.
-              In this club, we play Dungeons &amp; Dragons 5th Edition (2014) with some light homebrew elements to keep things flexible and fun.
+            <p>
+              Library phone: <a href="tel:15702824281">(570) 282-4281</a>
             </p>
           </div>
 
-          <div class="content-pad">
-            <div class="parchment-block">
-              <div class="parchment-inner">
-                <h3 class="parchment-title">What Happens at the Table?</h3>
-                <p class="parchment-text">
-                  You create a character, work with a group, solve problems, face monsters, make choices, and shape the story together.
-                  Some sessions are funny. Some are intense. Some are full of mystery, danger, teamwork, and unexpected heroics.
-                </p>
-              </div>
-            </div>
-
-            <div class="icon-row">
-              <div class="icon-card">Teens Ages 14 to 17</div>
-              <div class="icon-card">Adults 18+</div>
-              <div class="icon-card">New Players Welcome</div>
-              <div class="icon-card">D&amp;D 5e (2014)</div>
-              <div class="icon-card">Light Homebrew</div>
-            </div>
+          <div class="card">
+            <h2>Library Hours</h2>
+            <ul>
+              <li>Monday: 10 AM–7 PM</li>
+              <li>Tuesday: 10 AM–7 PM</li>
+              <li>Wednesday: 10 AM–7 PM</li>
+              <li>Thursday: 10 AM–7 PM</li>
+              <li>Friday: 10 AM–5 PM</li>
+              <li>Saturday: 10 AM–5 PM</li>
+              <li>Sunday: Closed</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="wrap">
-        <div class="panel">
-          <div class="section-head">
-            <h2 class="section-title">A Gaming Community Built Around Fun</h2>
-            <p class="section-subtitle">
-              NEPA TTRPG Club is about more than rules and dice. It is about finding your group, learning the game,
-              sharing stories, and having fun in a safe environment where imagination matters.
-            </p>
-          </div>
+      <section class="panel">
+        <p class="subtitle" style="margin-bottom:24px;">
+          Have a question before the first meeting is announced? Send a message directly below.
+        </p>
 
-          <div class="story-grid">
-            <article class="story-row">
-              <div class="story-image-wrap">
-                <img
-                  class="story-image"
-                  src="images/scene-07-armor.jpg"
-                  alt="A grounded but heroic fantasy image"
-                />
+        <div class="grid">
+          <div class="card">
+            <h2>Contact Daniel Directly</h2>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Founder & Head Game Master</strong>
+                <span>Mr. Daniel J. Vogt</span>
               </div>
-              <div class="story-copy">
-                <div class="story-kicker">Create a Character</div>
-                <h3>Play Someone Brave, Clever, Strange, or Legendary</h3>
-                <p>
-                  D&amp;D lets you step into the role of a hero of your own design. You might be a knight, wizard, rogue, cleric, or something entirely your own.
-                </p>
-                <div class="story-tag">Your imagination becomes part of the world.</div>
+
+              <div class="contact-item">
+                <strong>Email</strong>
+                <a href="mailto:570ttrpgclub@gmail.com">570ttrpgclub@gmail.com</a>
               </div>
-            </article>
 
-            <article class="story-row reverse">
-              <div class="story-image-wrap">
-                <img
-                  class="story-image"
-                  src="images/scene-06-park.jpg"
-                  alt="Fantasy themed image suggesting adventure and action"
-                />
-              </div>
-              <div class="story-copy">
-                <div class="story-kicker">Play the Game</div>
-                <h3>Roll Dice, Face Challenges, and Work as a Team</h3>
-                <p>
-                  Some moments are tense. Some are hilarious. Some come down to one important choice and one lucky roll.
-                  The fun comes from solving problems together and seeing what happens next.
-                </p>
-                <div class="story-tag">Adventure works best when the whole party joins in.</div>
-              </div>
-            </article>
-
-            <article class="story-row">
-              <div class="story-image-wrap">
-                <img
-                  class="story-image"
-                  src="images/scene-11-bard.jpg"
-                  alt="Magical everyday image with fantasy atmosphere"
-                />
-              </div>
-              <div class="story-copy">
-                <div class="story-kicker">Tell a Story</div>
-                <h3>Build a Shared Fantasy Story with Real People</h3>
-                <p>
-                  Every table creates its own story. You are not just watching fantasy happen. You are shaping it with your decisions, your character, and your group.
-                </p>
-                <div class="story-tag">No two campaigns ever feel exactly the same.</div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="panel content-pad">
-          <div class="rule-grid">
-            <div class="rule-card parchment-block">
-              <div class="parchment-inner">
-                <h3 class="parchment-title">Our Goal</h3>
-                <p class="parchment-text">
-                  Our goal is to help players grow their characters to Level 5. By that point, you should have enough experience to understand the flow of the game,
-                  join other tables confidently, and even feel prepared to start your own table as a Game Master.
-                </p>
-              </div>
-            </div>
-
-            <div class="plain-card">
-              <h3>Who Can Join?</h3>
-              <p>
-                We have two groups of gamers: ages 14 to 17, and adults 18+.
-              </p>
-              <p>
-                New players, returning players, friend groups, families, and experienced players are all welcome.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="how-it-works">
-      <div class="wrap">
-        <div class="panel content-pad">
-          <div class="section-head" style="padding:0 0 24px;">
-            <h2 class="section-title">How to Join</h2>
-            <p class="section-subtitle">
-              We have not scheduled the first club meeting time yet, so the best way to get involved is to complete the interest survey and stay in contact.
-            </p>
-          </div>
-
-          <div class="step-grid">
-            <div class="step-card">
-              <div class="step-number">1</div>
-              <h4>Fill Out the Survey</h4>
-              <p>
-                Start with one quick sign-up form so we can learn who is interested, what age group you are in, and what kind of games you want to play.
-              </p>
-            </div>
-
-            <div class="step-card">
-              <div class="step-number">2</div>
-              <h4>Tell Us More About Your Game Style</h4>
-              <p>
-                After you sign up, we will send you a more in-depth survey to learn what kind of game you would like to be part of and other useful details.
-                We use that information to help shape the club, pair you into a table of like-minded gamers, and know what to share with you.
-              </p>
-            </div>
-
-            <div class="step-card">
-              <div class="step-number">3</div>
-              <h4>Join the Adventure</h4>
-              <p>
-                Once the schedule is set, you will be ready to meet other players, join your group, and begin building your place in the community.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="panel content-pad">
-          <div class="section-head" style="padding:0 0 24px;">
-            <h2 class="section-title">Meeting Location</h2>
-            <p class="section-subtitle">
-              Club meetings will be held at the location below. Meeting dates and times are still being organized, so please sign up through the survey to stay updated.
-            </p>
-          </div>
-
-          <div class="meeting-grid">
-            <div class="meeting-card">
-              <h4>NEPA TTRPG Club: Carbondale</h4>
-              <p>
-                Meeting location:<br />
-                Carbondale Public Library<br />
-                5 N Main St, Carbondale, PA 18407
-              </p>
-              <p>
-                Library phone: <a href="tel:15702824281">(570) 282-4281</a>
-              </p>
-            </div>
-
-            <div class="meeting-card">
-              <h4>Library Hours</h4>
-              <ul>
-                <li>Monday: 10 AM–7 PM</li>
-                <li>Tuesday: 10 AM–7 PM</li>
-                <li>Wednesday: 10 AM–7 PM</li>
-                <li>Thursday: 10 AM–7 PM</li>
-                <li>Friday: 10 AM–5 PM</li>
-                <li>Saturday: 10 AM–5 PM</li>
-                <li>Sunday: Closed</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="wrap">
-        <div class="panel content-pad">
-          <div class="section-head" style="padding:0 0 24px;">
-            <h2 class="section-title">Contact Information</h2>
-            <p class="section-subtitle">
-              Have a question before the first meeting is announced? Reach out directly, or fill out the survey so you can receive updates.
-            </p>
-          </div>
-
-          <div class="contact-grid">
-            <div class="contact-card">
-              <h4>Contact Daniel Directly</h4>
-
-              <div class="contact-list">
-                <div class="contact-item">
-                  <strong>Founder &amp; Head Game Master</strong>
-                  <span>Mr. Daniel J. Vogt</span>
-                </div>
-
-                <div class="contact-item">
-                  <strong>Email</strong>
-                  <a href="mailto:570ttrpgclub@gmail.com">570ttrpgclub@gmail.com</a>
-                </div>
-
-                <div class="contact-item">
-                  <strong>Survey Link</strong>
-                  <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Open the NEPA TTRPG Club survey
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="email-card">
-              <h4>Email Message Template</h4>
-              <pre class="email-preview">To: 570ttrpgclub@gmail.com
-Subject: NEPA TTRPG Club Question
-
-Hello,
-
-My name is [Your Name].
-
-I am interested in NEPA TTRPG Club and would like to learn more about upcoming meetings, age groups, and how to get involved.
-
-I have already filled out the survey / I still need to fill out the survey.
-
-My question is:
-[Write your question here]
-
-Thank you,
-[Your Name]</pre>
-
-              <div class="email-actions">
+              <div class="contact-item">
+                <strong>Survey Link</strong>
                 <a
-                  class="btn btn-primary"
-                  href="mailto:570ttrpgclub@gmail.com?subject=NEPA%20TTRPG%20Club%20Question&body=Hello%2C%0A%0AMy%20name%20is%20%5BYour%20Name%5D.%0A%0AI%20am%20interested%20in%20NEPA%20TTRPG%20Club%20and%20would%20like%20to%20learn%20more%20about%20upcoming%20meetings%2C%20age%20groups%2C%20and%20how%20to%20get%20involved.%0A%0AI%20have%20already%20filled%20out%20the%20survey%20%2F%20I%20still%20need%20to%20fill%20out%20the%20survey.%0A%0AMy%20question%20is%3A%0A%5BWrite%20your%20question%20here%5D%0A%0AThank%20you%2C%0A%5BYour%20Name%5D"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Open Email Draft
+                  Open the NEPA TTRPG Club survey
                 </a>
+              </div>
+            </div>
+          </div>
 
+          <div class="card">
+            <h2>Send a Message</h2>
+
+            <form action="mailto:570ttrpgclub@gmail.com" method="post" enctype="text/plain">
+              <label for="name">Your Name</label>
+              <input id="name" name="Name" type="text" placeholder="Your name" />
+
+              <label for="email">Your Email</label>
+              <input id="email" name="Email" type="email" placeholder="your@email.com" />
+
+              <label for="message">Message</label>
+              <textarea id="message" name="Message" placeholder="Write your message here..."></textarea>
+
+              <div class="button-row">
+                <button class="btn btn-primary" type="submit">Send Email</button>
                 <a
                   class="btn btn-secondary"
                   href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Fill Out the Survey
+                  Open the Survey
                 </a>
               </div>
-            </div>
+            </form>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="panel cta-panel">
-          <h2 class="section-title">Ready to Join the Party?</h2>
-          <p class="section-subtitle">
-            Fill out the survey now so you can be part of the first round of club updates, meeting announcements, and future adventures.
-          </p>
-
-          <div class="cta-actions">
-            <a
-              class="btn btn-primary"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open the Survey
-            </a>
-            <a class="btn btn-secondary" href="#contact">Contact Daniel</a>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <footer>
