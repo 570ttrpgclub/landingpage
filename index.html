@@ -3,50 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NEPA TTRPG Club | Learn the Game. Join the Party.</title>
+  <title>NEPA TTRPG Club | Join the Guild</title>
   <meta
     name="description"
-    content="NEPA TTRPG Club is a tabletop role-playing game club for ages 10 to 13, ages 14 to 17, and adults 18+. Learn D&D 5e (2014), play in a safe and welcoming environment, and grow your character to Level 5."
+    content="NEPA TTRPG Club is a tabletop role-playing game club for ages 10 to 13, ages 14 to 17, and adults 18+. Learn Dungeons & Dragons 5th Edition (2014), join a welcoming table, and begin your next adventure."
   />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
+
   <style>
     :root {
-      --text: #f7f3ea;
-      --muted: #d8d1c5;
-      --gold: #d8b25a;
-      --gold-light: #f1d48a;
-      --parchment: #e7d4aa;
-      --parchment-2: #d9c28e;
-      --parchment-ink: #2e2113;
-      --panel: rgba(255,255,255,0.05);
-      --line: rgba(255,255,255,0.08);
-      --shadow: 0 24px 60px rgba(0,0,0,0.35);
-      --r-xl: 28px;
-      --r-lg: 22px;
-      --max: 1240px;
+      --bg-1: #130b25;
+      --bg-2: #08050f;
+      --panel-dark: rgba(20, 11, 38, 0.92);
+      --panel-line: rgba(232, 201, 124, 0.18);
+      --ink: #f7f1e3;
+      --muted: #ddd2bb;
+      --gold: #d7b25c;
+      --gold-2: #f0d790;
+      --gold-soft: rgba(215, 178, 92, 0.18);
+      --parchment: #ead9b3;
+      --parchment-2: #d8c08a;
+      --parchment-ink: #2f2112;
+      --shadow: 0 26px 60px rgba(0, 0, 0, 0.38);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1260px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
+      color: var(--ink);
       font-family: "Inter", Arial, sans-serif;
-      color: var(--text);
+      line-height: 1.65;
       background:
-        radial-gradient(circle at top center, rgba(111,66,193,0.18), transparent 26%),
-        radial-gradient(circle at 80% 20%, rgba(216,178,90,0.08), transparent 14%),
-        linear-gradient(180deg, #1a113b 0%, #0f0b22 40%, #08050f 100%);
-      line-height: 1.6;
+        radial-gradient(circle at top center, rgba(126, 86, 214, 0.20), transparent 24%),
+        radial-gradient(circle at 15% 20%, rgba(215, 178, 92, 0.08), transparent 12%),
+        linear-gradient(180deg, #1b1037 0%, #0f0a1f 42%, #08050f 100%);
+      overflow-x: hidden;
     }
 
-    img { display: block; width: 100%; }
-    a { color: inherit; text-decoration: none; }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.07;
+      background-image:
+        repeating-linear-gradient(
+          0deg,
+          transparent 0,
+          transparent 3px,
+          rgba(255,255,255,0.02) 4px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent 0,
+          transparent 5px,
+          rgba(255,255,255,0.014) 6px
+        );
+      mix-blend-mode: screen;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .wrap {
       width: min(var(--max), calc(100% - 32px));
@@ -56,10 +97,10 @@
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 30;
       padding: 14px 0;
-      backdrop-filter: blur(12px);
-      background: linear-gradient(180deg, rgba(8,6,17,0.9), rgba(8,6,17,0.35));
+      backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(8, 6, 16, 0.92), rgba(8, 6, 16, 0.45));
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
@@ -74,6 +115,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      min-width: 0;
     }
 
     .brand-badge {
@@ -83,6 +125,7 @@
       object-fit: cover;
       border: 2px solid rgba(255,255,255,0.12);
       box-shadow: 0 0 0 5px rgba(255,255,255,0.03);
+      flex-shrink: 0;
     }
 
     .brand-text strong {
@@ -94,9 +137,11 @@
 
     .brand-text span {
       display: block;
-      font-size: 12px;
-      color: var(--gold-light);
       margin-top: 2px;
+      font-size: 12px;
+      color: var(--gold-2);
+      line-height: 1.2;
+      letter-spacing: 0.3px;
     }
 
     .top-actions {
@@ -107,46 +152,73 @@
 
     .btn {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       padding: 14px 22px;
       border-radius: 999px;
       font-weight: 800;
       border: 1px solid transparent;
-      transition: transform .2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
       text-align: center;
+      font: inherit;
+      cursor: pointer;
     }
 
-    .btn:hover { transform: translateY(-2px); }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: #291b08;
-      box-shadow: 0 16px 28px rgba(216,178,90,0.22);
+      color: #2b1d09;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      box-shadow: 0 16px 28px rgba(215, 178, 92, 0.22);
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.06);
+      color: var(--ink);
+      background: rgba(255,255,255,0.05);
       border-color: rgba(255,255,255,0.09);
-      color: var(--text);
     }
 
     .hero {
-      padding: 28px 0 48px;
+      padding: 28px 0 52px;
     }
 
     .hero-shell {
+      position: relative;
       overflow: hidden;
-      border-radius: 36px;
+      border-radius: 34px;
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: var(--shadow);
       background:
-        radial-gradient(circle at top center, rgba(241,212,138,0.11), transparent 30%),
-        linear-gradient(180deg, rgba(31,20,67,0.98), rgba(8,5,15,0.99));
-      padding: 24px;
+        radial-gradient(circle at top center, rgba(240, 215, 144, 0.10), transparent 28%),
+        linear-gradient(180deg, rgba(31, 18, 60, 0.98), rgba(7, 5, 14, 0.99));
+      padding: 26px;
     }
 
-    .hero-title-small {
+    .hero-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border: 1px solid rgba(240, 215, 144, 0.08);
+      border-radius: 34px;
+      margin: 10px;
+    }
+
+    .hero-shell::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at center, transparent 45%, rgba(0,0,0,0.22)),
+        linear-gradient(90deg, transparent, rgba(255,255,255,0.02), transparent);
+    }
+
+    .hero-kicker {
+      position: relative;
+      z-index: 1;
       margin: 0;
       text-align: center;
       font-family: "Cinzel", serif;
@@ -154,22 +226,29 @@
       line-height: 1;
     }
 
-    .hero-kicker {
+    .hero-subkicker {
+      position: relative;
+      z-index: 1;
+      margin: 12px 0 22px;
       text-align: center;
-      color: var(--gold-light);
-      font-size: clamp(18px, 2.1vw, 30px);
+      color: var(--gold-2);
+      font-size: clamp(18px, 2vw, 30px);
       font-weight: 800;
-      margin: 14px 0 22px;
-      line-height: 1.15;
+      line-height: 1.18;
     }
 
-    .hero-image-frame {
+    .hero-frame {
+      position: relative;
+      z-index: 1;
       overflow: hidden;
-      border-radius: 28px;
+      border-radius: 26px;
       border: 1px solid rgba(255,255,255,0.08);
-      max-width: 1040px;
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,0.04),
+        0 18px 36px rgba(0,0,0,0.18);
+      background: #110b22;
+      max-width: 1080px;
       margin: 0 auto;
-      background: #120c29;
     }
 
     .hero-image {
@@ -178,35 +257,48 @@
       object-position: center;
     }
 
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(9,6,18,0.08), rgba(9,6,18,0.32)),
+        radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.14));
+      pointer-events: none;
+    }
+
     .hero-content {
+      position: relative;
+      z-index: 1;
       text-align: center;
-      padding: 30px 10px 6px;
+      padding: 34px 10px 6px;
+      max-width: 920px;
+      margin: 0 auto;
     }
 
     .hero-title {
       margin: 0;
       font-family: "Cinzel", serif;
       text-transform: uppercase;
-      font-size: clamp(40px, 7vw, 88px);
+      font-size: clamp(42px, 7vw, 90px);
       line-height: 0.9;
       letter-spacing: -1px;
     }
 
-    .hero-title .line-break {
+    .hero-title span {
       display: block;
       margin-top: 16px;
     }
 
-    .hero-subnote {
+    .hero-note-italic {
       margin: 14px 0 0;
-      font-size: clamp(16px, 1.7vw, 22px);
+      font-size: clamp(16px, 1.6vw, 22px);
       font-style: italic;
-      color: var(--gold-light);
+      color: var(--gold-2);
     }
 
     .hero-copy {
-      max-width: 780px;
       margin: 20px auto 0;
+      max-width: 760px;
       color: var(--muted);
       font-size: clamp(16px, 1.8vw, 20px);
     }
@@ -214,38 +306,47 @@
     .hero-actions {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 12px;
+      flex-wrap: wrap;
       margin-top: 24px;
     }
 
-    .hero-note {
+    .hero-footer-note {
       margin-top: 16px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .section {
-      padding: 0 0 42px;
+      padding: 0 0 44px;
     }
 
     .panel {
+      position: relative;
       overflow: hidden;
-      border-radius: var(--r-xl);
-      background: var(--panel);
-      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--panel-dark);
+      border: 1px solid var(--panel-line);
       box-shadow: var(--shadow);
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(255,255,255,0.014), transparent 42%);
     }
 
     .section-head {
       text-align: center;
-      padding: 30px 24px 0;
+      padding: 32px 24px 0;
     }
 
     .section-title {
       margin: 0;
       font-family: "Cinzel", serif;
-      font-size: clamp(30px, 4vw, 46px);
+      font-size: clamp(30px, 4vw, 48px);
       line-height: 1.04;
     }
 
@@ -261,17 +362,40 @@
     }
 
     .parchment {
+      position: relative;
+      overflow: hidden;
       background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.18), transparent 18%),
+        radial-gradient(circle at top left, rgba(255,255,255,0.16), transparent 18%),
         linear-gradient(180deg, var(--parchment), var(--parchment-2));
       color: var(--parchment-ink);
       border-radius: 22px;
       border: 1px solid rgba(94,69,33,0.3);
       box-shadow:
         inset 0 0 0 1px rgba(255,255,255,0.18),
-        0 18px 30px rgba(0,0,0,0.18);
+        0 16px 28px rgba(0,0,0,0.18);
       padding: 22px;
       text-align: center;
+    }
+
+    .parchment::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.10;
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          transparent 0,
+          transparent 6px,
+          rgba(68,45,18,0.12) 7px
+        );
+      mix-blend-mode: multiply;
+    }
+
+    .parchment > * {
+      position: relative;
+      z-index: 1;
     }
 
     .parchment h3 {
@@ -286,15 +410,22 @@
       line-height: 1.7;
     }
 
-    .info-cards {
+    .pill-group-top {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       margin-top: 20px;
     }
 
-    .info-card {
-      min-height: 110px;
+    .pill-group-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      min-height: 112px;
       padding: 16px 12px;
       border-radius: 18px;
       background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
@@ -307,71 +438,80 @@
       line-height: 1.35;
     }
 
-    .info-card-row-2 {
+    .feature-stack {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 12px;
+      gap: 22px;
+      padding: 26px 24px 24px;
     }
 
-    .three-cards {
+    .feature-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      padding: 24px;
-    }
-
-    .story-card {
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 20px;
+      align-items: stretch;
       overflow: hidden;
       border-radius: 24px;
       background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
       border: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      flex-direction: column;
     }
 
-    .story-image-wrap {
-      aspect-ratio: 4 / 3.3;
+    .feature-row.reverse {
+      grid-template-columns: 0.82fr 1.18fr;
+    }
+
+    .feature-row.reverse .feature-image-wrap {
+      order: 2;
+    }
+
+    .feature-row.reverse .feature-copy {
+      order: 1;
+    }
+
+    .feature-image-wrap {
+      min-height: 420px;
       background: #120d2a;
       overflow: hidden;
     }
 
-    .story-image {
+    .feature-image {
       height: 100%;
       object-fit: cover;
       object-position: center;
     }
 
-    .story-copy {
-      padding: 22px 20px;
+    .feature-copy {
+      padding: 30px 26px;
       display: flex;
       flex-direction: column;
-      flex: 1;
+      justify-content: center;
+      background:
+        radial-gradient(circle at top left, rgba(240,215,144,0.06), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
     }
 
-    .story-kicker {
+    .feature-kicker {
       font-size: 12px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--gold-light);
+      color: var(--gold-2);
       font-weight: 800;
       margin-bottom: 10px;
     }
 
-    .story-copy h3 {
-      margin: 0 0 10px;
+    .feature-copy h3 {
+      margin: 0 0 12px;
       font-family: "Cinzel", serif;
-      font-size: clamp(22px, 2.2vw, 28px);
+      font-size: clamp(28px, 3vw, 38px);
       line-height: 1.08;
     }
 
-    .story-copy p {
-      margin: 0 0 14px;
+    .feature-copy p {
+      margin: 0 0 16px;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 16px;
     }
 
-    .story-tag {
+    .feature-tag {
       display: inline-flex;
       width: fit-content;
       padding: 10px 14px;
@@ -380,42 +520,39 @@
       border: 1px solid rgba(255,255,255,0.08);
       font-size: 13px;
       font-weight: 700;
-      margin-top: auto;
     }
 
-    .goal-section {
+    .goal-stack {
       display: grid;
       gap: 18px;
     }
 
-    .goal-card,
-    .photo-panel,
-    .steps-card {
+    .simple-card {
       padding: 22px;
       border-radius: 20px;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
       border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .goal-card h3,
-    .steps-card h4 {
+    .simple-card h3 {
       margin: 0 0 12px;
       font-family: "Cinzel", serif;
     }
 
-    .goal-card p,
-    .steps-card p {
+    .simple-card p {
+      margin: 0;
       color: var(--muted);
       font-size: 15px;
-      margin: 0;
     }
 
-    .photo-panel {
-      padding: 0;
+    .divider-photo {
       overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.16);
     }
 
-    .photo-panel img {
+    .divider-photo img {
       aspect-ratio: 16 / 6;
       object-fit: cover;
       object-position: center;
@@ -427,6 +564,13 @@
       gap: 18px;
     }
 
+    .steps-card {
+      padding: 22px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
     .step-number {
       width: 46px;
       height: 46px;
@@ -434,11 +578,22 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
       color: #2b1c08;
       font-weight: 800;
       box-shadow: 0 12px 24px rgba(216,178,90,0.22);
       margin-bottom: 14px;
+    }
+
+    .steps-card h4 {
+      margin: 0 0 12px;
+      font-family: "Cinzel", serif;
+    }
+
+    .steps-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
     }
 
     .cta-panel {
@@ -462,14 +617,24 @@
     }
 
     @media (max-width: 1100px) {
-      .three-cards {
+      .feature-row,
+      .feature-row.reverse {
         grid-template-columns: 1fr;
+      }
+
+      .feature-row.reverse .feature-image-wrap,
+      .feature-row.reverse .feature-copy {
+        order: initial;
+      }
+
+      .feature-image-wrap {
+        min-height: 340px;
       }
     }
 
     @media (max-width: 980px) {
-      .info-cards,
-      .info-card-row-2,
+      .pill-group-top,
+      .pill-group-bottom,
       .steps-grid {
         grid-template-columns: 1fr;
       }
@@ -498,7 +663,6 @@
         flex-direction: column;
       }
 
-      .top-link,
       .btn {
         width: 100%;
       }
@@ -511,8 +675,16 @@
         padding-right: 16px;
       }
 
-      .three-cards {
+      .feature-stack {
         padding: 16px;
+      }
+
+      .feature-copy {
+        padding: 22px 18px;
+      }
+
+      .feature-image-wrap {
+        min-height: 280px;
       }
     }
   </style>
@@ -525,7 +697,7 @@
           <img src="images/hero-party.jpg" alt="NEPA TTRPG Club crest" class="brand-badge" />
           <div class="brand-text">
             <strong>NEPA TTRPG Club</strong>
-            <span>Learn the Game. Join the Party.</span>
+            <span>Join the guild. Learn the game. Find your party.</span>
           </div>
         </div>
 
@@ -548,31 +720,31 @@
     <section class="hero">
       <div class="wrap">
         <div class="hero-shell">
-          <h1 class="hero-title-small">NEPA TTRPG Club</h1>
-          <div class="hero-kicker">A Safe and Welcoming Place to Learn, Play, and Adventure Together</div>
+          <h1 class="hero-kicker">NEPA TTRPG Club</h1>
+          <div class="hero-subkicker">A welcoming guild hall for young adventurers, teen heroes, and adult players alike.</div>
 
-          <div class="hero-image-frame">
+          <div class="hero-frame">
             <img
               class="hero-image"
               src="images/hero-party.jpg"
-              alt="Players around a table playing Dungeons and Dragons"
+              alt="Players gathered at a table for a fantasy adventure"
             />
+            <div class="hero-overlay"></div>
           </div>
 
           <div class="hero-content">
             <h2 class="hero-title">
               Quests Await.
-              <span class="line-break">Heroes Needed.</span>
+              <span>Heroes Needed.</span>
             </h2>
-            <div class="hero-subnote">Costume Not Required*</div>
+            <div class="hero-note-italic">Costume Not Required*</div>
 
             <p class="hero-copy">
-              Join a tabletop role-playing game club where youth and adults can create characters, roll dice,
-              tell stories together, and learn how to play Dungeons &amp; Dragons in a safe, fun, and welcoming environment.
+              Welcome, adventurer. Pull up a chair, gather your dice, and step into a club built for shared stories, brave choices, clever plans, and the kind of laughter that only happens around a good table.
             </p>
 
             <div class="hero-actions">
-              <a class="btn btn-secondary" href="#how-it-works">See How It Works</a>
+              <a class="btn btn-secondary" href="#how-it-works">How to Join</a>
               <a
                 class="btn btn-primary"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
@@ -583,8 +755,8 @@
               </a>
             </div>
 
-            <div class="hero-note">
-              We have not scheduled the first club meeting time yet, so the best first step is to fill out the interest survey and stay connected.
+            <div class="hero-footer-note">
+              Our first gathering time is still being arranged, so the surest way to stay informed is to sign up and let us know you are interested.
             </div>
           </div>
         </div>
@@ -597,8 +769,7 @@
           <div class="section-head">
             <h2 class="section-title">What Is a TTRPG?</h2>
             <p class="section-subtitle">
-              A TTRPG, or tabletop role-playing game, is a game where players gather around a table and step into the role of characters in a shared story.
-              In this club, you are not just watching fantasy happen. You are helping create it.
+              A tabletop role-playing game is part game, part conversation, and part shared story. Around the table, players become characters, make choices, face danger, solve problems, and discover what kind of legends they become together.
             </p>
           </div>
 
@@ -606,19 +777,19 @@
             <div class="parchment">
               <h3>What Happens at the Table?</h3>
               <p>
-                Players create characters, work together in a group, solve problems, face monsters, make choices, and shape the story session by session.
+                A Dungeon Master describes the world. Players step into character. Dice decide uncertain moments. The story moves forward through teamwork, imagination, and whatever wild plan the party attempts next.
               </p>
             </div>
 
-            <div class="info-cards">
-              <div class="info-card">Teen Group:<br />Ages 10 to 13</div>
-              <div class="info-card">Youth Group:<br />Ages 14 to 17</div>
-              <div class="info-card">Adult Group:<br />Ages 18+</div>
+            <div class="pill-group-top">
+              <div class="pill">Teen Group<br />Ages 10 to 13</div>
+              <div class="pill">Youth Group<br />Ages 14 to 17</div>
+              <div class="pill">Adult Group<br />Ages 18+</div>
             </div>
 
-            <div class="info-card-row-2">
-              <div class="info-card">New Players, Veteran Players, &amp; Forever DMs Welcome!</div>
-              <div class="info-card">Dungeons &amp; Dragons 5th Edition (2014)<br />with “Light Homebrew”</div>
+            <div class="pill-group-bottom">
+              <div class="pill">New Players, Veteran Players, &amp; Forever DMs Welcome!</div>
+              <div class="pill">Dungeons &amp; Dragons 5th Edition (2014)<br />with “Light Homebrew”</div>
             </div>
           </div>
         </div>
@@ -631,50 +802,59 @@
           <div class="section-head">
             <h2 class="section-title">What You Do at the Table</h2>
             <p class="section-subtitle">
-              D&amp;D is part game, part teamwork, and part shared storytelling.
+              Every campaign is a blend of character, challenge, and story. That is the heart of the club, and that is where the fun begins.
             </p>
           </div>
 
-          <div class="three-cards">
-            <article class="story-card">
-              <div class="story-image-wrap">
-                <img class="story-image" src="images/scene-07-armor.jpg" alt="Create a character image" />
+          <div class="feature-stack">
+            <article class="feature-row">
+              <div class="feature-image-wrap">
+                <img class="feature-image" src="images/scene-07-armor.jpg" alt="Fantasy character image" />
               </div>
-              <div class="story-copy">
-                <div class="story-kicker">Create a Character</div>
-                <h3>Build Someone You Want to Play</h3>
+              <div class="feature-copy">
+                <div class="feature-kicker">Forge Your Character</div>
+                <h3>Build Someone You Want to Become</h3>
                 <p>
-                  Your character can be brave, clever, funny, mysterious, serious, or completely unique.
+                  Some heroes are noble. Some are strange. Some are funny, quiet, reckless, brilliant, or gloriously dramatic. At this table, your character is more than numbers on a sheet. They are your voice in the adventure.
                 </p>
-                <div class="story-tag">Your imagination becomes part of the world.</div>
+                <p>
+                  You might arrive with a full idea already in mind, or you might discover who your character is one choice at a time. Either way, every adventurer starts somewhere.
+                </p>
+                <div class="feature-tag">Every hero begins with a first step.</div>
               </div>
             </article>
 
-            <article class="story-card">
-              <div class="story-image-wrap">
-                <img class="story-image" src="images/scene-06-park.jpg" alt="Play the game image" />
+            <article class="feature-row reverse">
+              <div class="feature-image-wrap">
+                <img class="feature-image" src="images/scene-06-park.jpg" alt="Fantasy challenge image" />
               </div>
-              <div class="story-copy">
-                <div class="story-kicker">Play the Game</div>
-                <h3>Roll Dice and Work as a Team</h3>
+              <div class="feature-copy">
+                <div class="feature-kicker">Face Danger Together</div>
+                <h3>Roll Dice, Make Choices, and Trust the Party</h3>
                 <p>
-                  Players explore places, make decisions, face danger, and react to whatever happens next.
+                  A locked gate, a suspicious stranger, a hidden clue, a charging monster, a plan that should absolutely not work. These are the moments where the game comes alive.
                 </p>
-                <div class="story-tag">Adventure works best when the whole party joins in.</div>
+                <p>
+                  Players work together, weigh risks, improvise solutions, and let the dice decide what happens when the outcome is uncertain. Victory is sweeter when the whole table earns it together.
+                </p>
+                <div class="feature-tag">The dice decide. Sometimes.</div>
               </div>
             </article>
 
-            <article class="story-card">
-              <div class="story-image-wrap">
-                <img class="story-image" src="images/scene-11-bard.jpg" alt="Tell a story image" />
+            <article class="feature-row">
+              <div class="feature-image-wrap">
+                <img class="feature-image" src="images/scene-11-bard.jpg" alt="Fantasy storytelling image" />
               </div>
-              <div class="story-copy">
-                <div class="story-kicker">Tell a Story</div>
-                <h3>Shape a Shared Fantasy Story</h3>
+              <div class="feature-copy">
+                <div class="feature-kicker">Shape the Story</div>
+                <h3>Help Create a Tale No Other Table Will Tell</h3>
                 <p>
-                  The choices your group makes change what happens and how the adventure unfolds.
+                  No two groups tell the same story. The choices your party makes change what is discovered, what is lost, who becomes an ally, and how the world answers back.
                 </p>
-                <div class="story-tag">The story grows from the choices your table makes.</div>
+                <p>
+                  Some sessions will feel tense. Some will feel triumphant. Some will become inside jokes your group remembers for years. That is the magic of tabletop play.
+                </p>
+                <div class="feature-tag">No two campaigns ever unfold the same way.</div>
               </div>
             </article>
           </div>
@@ -685,23 +865,23 @@
     <section class="section">
       <div class="wrap">
         <div class="panel content-pad">
-          <div class="goal-section">
-            <div class="card">
+          <div class="goal-stack">
+            <div class="simple-card">
               <h3>Our Goal</h3>
               <p>
-                We want players to grow their characters to Level 5 and leave with enough experience to join other tables confidently or even start their own.
+                Our aim is to guide players toward Level 5, where the rules begin to feel familiar, class features start to click, and players leave with the confidence to join other tables or even begin running one of their own.
               </p>
             </div>
 
-            <div class="card">
+            <div class="simple-card">
               <h3>Who Can Join?</h3>
               <p>
-                We currently plan to support three groups: ages 10 to 13, ages 14 to 17, and adults 18+.
+                We currently plan to support three groups: ages 10 to 13, ages 14 to 17, and adults 18+. Whether you are brand new, returning after years away, or the kind of player who already owns too many dice, there is room for you here.
               </p>
             </div>
 
-            <div class="photo-panel">
-              <img src="images/hero-party.jpg" alt="Players gathered around a D&D table" />
+            <div class="divider-photo">
+              <img src="images/hero-party.jpg" alt="D&D players gathered around a welcoming table" />
             </div>
           </div>
         </div>
@@ -714,7 +894,7 @@
           <div class="section-head" style="padding:0 0 24px;">
             <h2 class="section-title">How to Join</h2>
             <p class="section-subtitle">
-              We have not scheduled the first club meeting time yet, so the best way to get involved is to complete the interest survey and stay in contact.
+              The first meeting time is still being arranged. For now, the best way to enter the guild is simple.
             </p>
           </div>
 
@@ -723,7 +903,7 @@
               <div class="step-number">1</div>
               <h4>Fill Out the Survey</h4>
               <p>
-                Start with one quick sign-up form so we can learn your age group and interest.
+                Tell us your age group and let us know you want a seat at the table.
               </p>
             </div>
 
@@ -731,7 +911,7 @@
               <div class="step-number">2</div>
               <h4>Tell Us More</h4>
               <p>
-                After you sign up, we will send a more in-depth survey to help shape tables and groups.
+                After that, we will send a deeper follow-up so we can shape groups and tables well.
               </p>
             </div>
 
@@ -739,7 +919,7 @@
               <div class="step-number">3</div>
               <h4>Join the Adventure</h4>
               <p>
-                Once the schedule is set, you will be ready to meet players and begin the campaign.
+                Once the schedule is set, you will be ready to meet your party and begin the campaign.
               </p>
             </div>
           </div>
@@ -752,13 +932,13 @@
         <div class="panel cta-panel">
           <h2 class="section-title">Ready to Join the Party?</h2>
           <p class="section-subtitle">
-            Fill out the survey now so you can be part of the first round of club updates and meeting announcements.
+            Sign up now so you can be part of the first round of announcements, table planning, and future adventures.
           </p>
 
           <div class="cta-actions">
             <a
               class="btn btn-primary"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSe4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
               target="_blank"
               rel="noopener noreferrer"
             >
