@@ -275,11 +275,11 @@
 
     .hero-title span {
       display: block;
-      margin-top: 16px;
+      margin-top: 34px;
     }
 
     .hero-note-italic {
-      margin: 14px 0 0;
+      margin: 16px 0 0;
       font-size: clamp(16px, 1.6vw, 22px);
       font-style: italic;
       color: var(--gold-light);
@@ -297,6 +297,9 @@
       color: var(--gold-light);
       font-weight: 700;
       font-size: 15px;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero-actions {
@@ -521,13 +524,13 @@
       font-weight: 700;
     }
 
-    .matching-grid {
+    .table-build-grid {
       display: grid;
       gap: 18px;
       padding: 26px 24px 24px;
     }
 
-    .matching-card {
+    .table-build-card {
       padding: 24px;
       border-radius: 24px;
       border: 1px solid rgba(255,255,255,0.08);
@@ -535,7 +538,7 @@
       text-align: center;
     }
 
-    .matching-card h3 {
+    .table-build-card h3 {
       margin: 0 0 12px;
       font-family: "Cinzel", serif;
       font-size: clamp(26px, 2.8vw, 36px);
@@ -543,34 +546,67 @@
       text-align: center;
     }
 
-    .matching-card p {
+    .table-build-card p {
       margin: 0;
       color: var(--muted);
       font-size: 16px;
       text-align: center;
     }
 
-    .ruby-row {
+    .ruby-centered {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 20px;
-      align-items: stretch;
+      gap: 18px;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .ruby-photo {
+      width: 100%;
+      max-width: 760px;
       overflow: hidden;
       border-radius: 24px;
       border: 1px solid rgba(255,255,255,0.08);
       background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
-    }
-
-    .ruby-row .feature-image {
-      object-fit: contain;
-      object-position: center;
-      background: #120d2a;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.16);
       padding: 18px;
     }
 
-    .ruby-row .feature-copy {
+    .ruby-photo img {
+      width: 100%;
+      height: auto;
+      max-height: 760px;
+      object-fit: contain;
+      object-position: center;
+      background: #120d2a;
+      border-radius: 18px;
+    }
+
+    .ruby-copy {
+      max-width: 820px;
       text-align: center;
-      align-items: center;
+    }
+
+    .ruby-copy .feature-kicker {
+      justify-content: center;
+    }
+
+    .ruby-copy h3 {
+      margin: 0 0 12px;
+      font-family: "Cinzel", serif;
+      font-size: clamp(28px, 3vw, 38px);
+      line-height: 1.08;
+      text-align: center;
+    }
+
+    .ruby-copy p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .ruby-copy .feature-tag {
+      margin: 0 auto;
     }
 
     .steps-grid {
@@ -633,8 +669,7 @@
 
     @media (max-width: 1100px) {
       .feature-row,
-      .feature-row.reverse,
-      .ruby-row {
+      .feature-row.reverse {
         grid-template-columns: 1fr;
       }
 
@@ -692,16 +727,22 @@
       }
 
       .feature-stack,
-      .matching-grid {
+      .table-build-grid {
         padding: 16px;
       }
 
-      .feature-copy {
-        padding: 22px 18px;
+      .feature-copy,
+      .ruby-copy {
+        padding-left: 0;
+        padding-right: 0;
       }
 
       .feature-image-wrap {
         height: 280px;
+      }
+
+      .ruby-photo {
+        padding: 12px;
       }
     }
   </style>
@@ -761,7 +802,7 @@
             </p>
 
             <div class="hero-anchor">
-              A tabletop role-playing game played in person. No screens. Just dice, decisions, character sheets, and your party.
+              A tabletop role-playing game club, played in person, where imagination leads the way and real people build a story together. Less screen time. More dice, decisions, character sheets, and party banter around a real table.
             </div>
 
             <div class="hero-actions">
@@ -893,26 +934,27 @@
             </p>
           </div>
 
-          <div class="matching-grid">
-            <div class="matching-card">
+          <div class="table-build-grid">
+            <div class="table-build-card">
               <h3>What We Want This Club to Become</h3>
               <p>
                 We are not just trying to teach rules and send people home. We want to build a lasting local D&amp;D community, the kind of table people are excited to come back to week after week. A place where brand-new players can start strong, experienced players can find a good group, and everyone can grow into the kind of gamer who knows how to play well, play fair, support the party, and help make the whole table better.
               </p>
             </div>
 
-            <div class="matching-card">
+            <div class="table-build-card">
               <h3>Who Fits This Table Best?</h3>
               <p>
                 We currently plan to support three groups: ages 10 to 13, ages 14 to 17, and adults 18+. We welcome brand-new players, returning players, veteran players, and forever DMs, as long as they are respectful, collaborative, and ready to share the spotlight. The best players for this club are the ones who want to build something together, take the game seriously enough to care, and still laugh when the dice turn a good plan into a complete disaster.
               </p>
             </div>
 
-            <article class="ruby-row">
-              <div class="feature-image-wrap">
-                <img class="feature-image" src="images/scene-12-ruby.jpg" alt="Ruby the barbarian" />
+            <div class="ruby-centered">
+              <div class="ruby-photo">
+                <img src="images/scene-12-ruby.jpg" alt="Ruby the barbarian" />
               </div>
-              <div class="feature-copy">
+
+              <div class="ruby-copy">
                 <div class="feature-kicker">Find Your Party</div>
                 <h3>Take Your Place in the Story</h3>
                 <p>
@@ -923,7 +965,19 @@
                 </p>
                 <div class="feature-tag">Every party starts somewhere.</div>
               </div>
-            </article>
+
+              <div class="cta-actions">
+                <a
+                  class="btn btn-primary"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open the Survey
+                </a>
+                <a class="btn btn-secondary" href="club-info.html">Club Info & Contact</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -963,29 +1017,6 @@
                 Once the schedule is set, you will meet your party, learn the game, and begin the campaign.
               </p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="panel cta-panel">
-          <h2 class="section-title">Ready to Join the Party?</h2>
-          <p class="section-subtitle">
-            The dungeon is waiting, the party is forming, and the story has not been written yet.
-          </p>
-
-          <div class="cta-actions">
-            <a
-              class="btn btn-primary"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open the Survey
-            </a>
-            <a class="btn btn-secondary" href="club-info.html">Club Info & Contact</a>
           </div>
         </div>
       </div>
