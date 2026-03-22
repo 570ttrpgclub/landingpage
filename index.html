@@ -1,3 +1,6 @@
+Replace your entire `index.html` with this:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +28,6 @@
       --muted: #ddd2bf;
       --gold: #d7b25c;
       --gold-light: #f1da95;
-      --gold-line: rgba(215, 178, 92, 0.28);
       --panel: rgba(18, 10, 34, 0.86);
       --panel-line: rgba(255, 255, 255, 0.08);
       --parchment: #ead9b2;
@@ -34,23 +36,17 @@
       --shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
       --radius-xl: 30px;
       --radius-lg: 22px;
-      --radius-md: 16px;
       --max: 1280px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: "Inter", Arial, sans-serif;
       color: var(--ink);
-      line-height: 1.65;
+      line-height: 1.68;
       background:
         radial-gradient(circle at top center, rgba(125, 89, 214, 0.20), transparent 24%),
         radial-gradient(circle at 16% 16%, rgba(215, 178, 92, 0.09), transparent 12%),
@@ -65,30 +61,13 @@
       pointer-events: none;
       opacity: 0.06;
       background-image:
-        repeating-linear-gradient(
-          0deg,
-          transparent 0,
-          transparent 3px,
-          rgba(255, 255, 255, 0.02) 4px
-        ),
-        repeating-linear-gradient(
-          90deg,
-          transparent 0,
-          transparent 5px,
-          rgba(255, 255, 255, 0.015) 6px
-        );
+        repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(255,255,255,0.02) 4px),
+        repeating-linear-gradient(90deg, transparent 0, transparent 5px, rgba(255,255,255,0.015) 6px);
       mix-blend-mode: screen;
     }
 
-    img {
-      display: block;
-      width: 100%;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    img { display: block; width: 100%; }
+    a { color: inherit; text-decoration: none; }
 
     .wrap {
       width: min(var(--max), calc(100% - 32px));
@@ -166,9 +145,7 @@
       cursor: pointer;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+    .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
       background: linear-gradient(135deg, var(--gold), var(--gold-light));
@@ -271,7 +248,7 @@
       position: relative;
       z-index: 1;
       text-align: center;
-      max-width: 920px;
+      max-width: 960px;
       margin: 0 auto;
       padding: 34px 10px 6px;
     }
@@ -299,7 +276,7 @@
 
     .hero-copy {
       margin: 20px auto 0;
-      max-width: 820px;
+      max-width: 860px;
       color: var(--muted);
       font-size: clamp(16px, 1.8vw, 20px);
     }
@@ -325,9 +302,7 @@
       font-size: 14px;
     }
 
-    .section {
-      padding: 0 0 46px;
-    }
+    .section { padding: 0 0 46px; }
 
     .panel {
       position: relative;
@@ -358,13 +333,16 @@
       font-family: "Cinzel", serif;
       font-size: clamp(30px, 4vw, 48px);
       line-height: 1.04;
+      text-align: center;
+      width: 100%;
     }
 
     .section-subtitle {
       margin: 10px auto 0;
-      max-width: 860px;
+      max-width: 900px;
       color: var(--muted);
       font-size: 16px;
+      text-align: center;
     }
 
     .content-pad {
@@ -396,12 +374,7 @@
       pointer-events: none;
       opacity: 0.10;
       background-image:
-        repeating-linear-gradient(
-          45deg,
-          transparent 0,
-          transparent 6px,
-          rgba(68,45,18,0.12) 7px
-        );
+        repeating-linear-gradient(45deg, transparent 0, transparent 6px, rgba(68,45,18,0.12) 7px);
       mix-blend-mode: multiply;
     }
 
@@ -570,6 +543,13 @@
       border-radius: 24px;
       border: 1px solid rgba(255,255,255,0.08);
       background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
+    }
+
+    .ruby-row .feature-image {
+      object-fit: contain;
+      object-position: center;
+      background: #120d2a;
+      padding: 18px;
     }
 
     .steps-grid {
@@ -756,11 +736,11 @@
             <div class="hero-note-italic">Costumes Not Required*</div>
 
             <p class="hero-copy">
-              Sit down at the table, gather your party, roll the dice, and step into a world of dungeons, monsters, treasure, wild plans, close calls, and the kind of stories that keep people talking long after the session ends.
+              Sit down at the table, gather your party, roll the dice, and step into the greatest roleplaying game in the world: a place of dungeons, dragons, monsters, treasure, close calls, clutch rolls, bad plans, brilliant saves, and the kind of stories that live on long after the session ends.
             </p>
 
             <div class="hero-anchor">
-              A tabletop role-playing game played in person. No screens. Just dice, decisions, and your party.
+              A tabletop role-playing game played in person. No screens. Just dice, decisions, character sheets, and your party.
             </div>
 
             <div class="hero-actions">
@@ -787,9 +767,9 @@
       <div class="wrap">
         <div class="panel">
           <div class="section-head">
-            <h2 class="section-title">What Is Dungeons &amp; Dragons?</h2>
+            <h2 class="section-title">What Is a TTRPG?</h2>
             <p class="section-subtitle">
-              Dungeons &amp; Dragons is a game where a group of players creates characters and steps into a shared fantasy world. One person, the Dungeon Master, describes the world. The players decide what to do in it. The dice decide what happens when things get risky.
+              A tabletop role-playing game is where imagination becomes the game board. In Dungeons &amp; Dragons, one person describes the world, the players decide what their characters do, and the dice answer the question every gamer eventually asks: did that actually work?
             </p>
           </div>
 
@@ -797,7 +777,7 @@
             <div class="parchment">
               <h3>What Happens at the Table?</h3>
               <p>
-                You create a hero, explore dangerous places, search for treasure, survive traps, talk your way through trouble, face monsters, and make choices that shape what happens next. You are both a main character and part of the supporting cast, sharing the story’s spotlight with the rest of your party.
+                You create a hero, enter dangerous places, search for treasure, survive traps, bargain with suspicious strangers, face monsters, cast spells, swing steel, and make choices that push the story forward. You are both a main character and part of the supporting cast, sharing the spotlight with the rest of your party like a crew of modern storytellers building one campaign together.
               </p>
             </div>
 
@@ -822,7 +802,7 @@
           <div class="section-head">
             <h2 class="section-title">What You Do at the Table</h2>
             <p class="section-subtitle">
-              This is not a game you watch from the sidelines. You make the choices, you roll the dice, and you live with whatever glorious mess follows.
+              This is not a game you watch from the sidelines. You make the call, you roll the dice, and you live with whatever glorious mess follows.
             </p>
           </div>
 
@@ -835,10 +815,10 @@
                 <div class="feature-kicker">Forge Your Hero</div>
                 <h3>Create a Character Worth Following</h3>
                 <p>
-                  Maybe you want to be the armored fighter holding the doorway while everyone else scrambles for a plan. Maybe you want to be the wizard with one spell left and a terrible feeling. Maybe you want to be the rogue already checking pockets before the fight is even over.
+                  Maybe you want to be the armored fighter anchoring the front line, the wizard with one spell slot left and a bad feeling, or the rogue already halfway into trouble before the plan is even finished.
                 </p>
                 <p>
-                  However you imagine your character, we help you build them. You do not need to arrive knowing the rules. You just need a spark of an idea.
+                  However you picture your character, we help you build them. You do not need to arrive knowing the rules. You just need a spark of imagination and the urge to see who that character becomes once the game starts moving.
                 </p>
                 <div class="feature-tag">Every hero starts somewhere.</div>
               </div>
@@ -852,10 +832,10 @@
                 <div class="feature-kicker">Face the Quest Together</div>
                 <h3>Explore Dungeons, Survive Trouble, and Roll When It Counts</h3>
                 <p>
-                  At the table, you step into dangerous ruins, suspicious towns, trapped corridors, forgotten halls, and whatever else the Dungeon Master has waiting. Some doors should be opened. Some absolutely should not. Your party will open them anyway.
+                  At the table, you step into dangerous ruins, suspicious towns, trapped corridors, forgotten halls, and whatever else the Dungeon Master has waiting beyond the next door. Some doors should be opened. Some absolutely should not. Your party will open them anyway.
                 </p>
                 <p>
-                  When the outcome matters, you roll the dice. Those rolls can save the group, wreck the plan, or turn a bad decision into the best story of the night.
+                  When the outcome matters, you roll. Those dice can save the group, wreck the plan, trigger the trap, win the fight, or turn a bad idea into the best story of the night.
                 </p>
                 <div class="feature-tag">The dice decide. Sometimes.</div>
               </div>
@@ -869,10 +849,10 @@
                 <div class="feature-kicker">Shape the Tale</div>
                 <h3>Build a Story No Other Table Will Tell</h3>
                 <p>
-                  Every group makes different choices. One table talks its way past danger. Another charges in. Another spends twenty minutes arguing about a plan that stops making sense halfway through and commits to it anyway.
+                  Every group makes different choices. One party talks its way past danger. Another charges in. Another spends twenty minutes arguing about a plan that stops making sense halfway through and commits to it anyway because the vibe is right.
                 </p>
                 <p>
-                  That is the fun of D&amp;D. No two campaigns unfold the same way, because the story belongs to the people sitting at the table.
+                  That is the real magic of D&amp;D. No two campaigns unfold the same way, because the story belongs to the people at the table, not a script.
                 </p>
                 <div class="feature-tag">Your choices become the story.</div>
               </div>
@@ -886,24 +866,24 @@
       <div class="wrap">
         <div class="panel">
           <div class="section-head">
-            <h2 class="section-title">Our Goal &amp; Who Can Join?</h2>
+            <h2 class="section-title">What Kind of Table Are We Building?</h2>
             <p class="section-subtitle">
-              This club is built to be welcoming from the first session forward, whether you are trying D&amp;D for the first time or returning with years of experience and a suspiciously heavy dice bag.
+              We are building a local table for respectful, mature players who want to play an imagination-powered game with friends, make new ones, and become part of a real-world community of fantasy nerds, dice goblins, storytellers, and party-minded problem solvers.
             </p>
           </div>
 
           <div class="matching-grid">
             <div class="matching-card">
-              <h3>Our Goal</h3>
+              <h3>What We Want This Club to Become</h3>
               <p>
-                Our aim is to guide players to Level 5, where the rules begin to click, characters feel powerful and distinct, and players leave ready to join other tables with confidence or even begin running one of their own.
+                We are not just trying to teach rules. We want to build a lasting local D&amp;D community: a place where new players can start strong, experienced players can find a good table, and everyone can grow into the kind of gamer who knows how to play well, play fair, and make the game better for the whole party.
               </p>
             </div>
 
             <div class="matching-card">
-              <h3>Who Can Join?</h3>
+              <h3>Who Fits This Table Best?</h3>
               <p>
-                We currently plan to support three groups: ages 10 to 13, ages 14 to 17, and adults 18+. Whether you are brand new, coming back after years away, or already own more dice than any reasonable person should, there is room for you here.
+                We currently plan to support three groups: ages 10 to 13, ages 14 to 17, and adults 18+. We welcome brand-new players, returning players, veteran players, and forever DMs, as long as they are respectful, collaborative, and ready to share the table like part of a party instead of trying to be the only main character in the room.
               </p>
             </div>
 
@@ -913,12 +893,12 @@
               </div>
               <div class="feature-copy">
                 <div class="feature-kicker">Find Your Party</div>
-                <h3>Take Your Place at the Table</h3>
+                <h3>Take Your Place in the Story</h3>
                 <p>
-                  Every group starts with a few players, a handful of dice, and the willingness to see what happens next. Over time, that turns into inside jokes, close calls, favorite characters, and stories people keep retelling.
+                  Every group starts with a few players, a handful of dice, and the willingness to see what happens next. Over time, that turns into close calls, favorite characters, campaign memories, and the kind of table chemistry people keep coming back for.
                 </p>
                 <p>
-                  Whether you are showing up for the first time or returning to the hobby, this is where new adventurers become part of the party.
+                  Whether you are walking in with zero experience or years of it, this is where new adventurers become part of the party.
                 </p>
                 <div class="feature-tag">Every party starts somewhere.</div>
               </div>
@@ -996,3 +976,4 @@
   </footer>
 </body>
 </html>
+```
