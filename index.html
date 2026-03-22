@@ -16,10 +16,6 @@
   />
   <style>
     :root {
-      --bg: #120b26;
-      --bg2: #08050f;
-      --panel: rgba(255,255,255,0.05);
-      --line: rgba(255,255,255,0.08);
       --text: #f7f3ea;
       --muted: #d8d1c5;
       --gold: #d8b25a;
@@ -27,10 +23,12 @@
       --parchment: #e7d4aa;
       --parchment-2: #d9c28e;
       --parchment-ink: #2e2113;
+      --panel: rgba(255,255,255,0.05);
+      --line: rgba(255,255,255,0.08);
       --shadow: 0 24px 60px rgba(0,0,0,0.35);
       --r-xl: 28px;
       --r-lg: 22px;
-      --max: 1220px;
+      --max: 1240px;
     }
 
     * { box-sizing: border-box; }
@@ -290,7 +288,7 @@
 
     .info-cards {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       margin-top: 20px;
     }
@@ -307,6 +305,13 @@
       text-align: center;
       font-weight: 700;
       line-height: 1.35;
+    }
+
+    .info-card-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 12px;
     }
 
     .three-cards {
@@ -326,17 +331,15 @@
     }
 
     .story-image-wrap {
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 4 / 3.3;
       background: #120d2a;
       overflow: hidden;
     }
 
     .story-image {
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center;
-      padding: 10px;
-      background: #120d2a;
     }
 
     .story-copy {
@@ -380,43 +383,48 @@
       margin-top: auto;
     }
 
-    .split-two {
+    .goal-section {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       gap: 18px;
     }
 
-    .card {
+    .goal-card,
+    .photo-panel,
+    .steps-card {
       padding: 22px;
       border-radius: 20px;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
       border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .card h3,
+    .goal-card h3,
     .steps-card h4 {
       margin: 0 0 12px;
       font-family: "Cinzel", serif;
     }
 
-    .card p,
+    .goal-card p,
     .steps-card p {
       color: var(--muted);
       font-size: 15px;
       margin: 0;
     }
 
+    .photo-panel {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .photo-panel img {
+      aspect-ratio: 16 / 6;
+      object-fit: cover;
+      object-position: center;
+    }
+
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
-    }
-
-    .steps-card {
-      padding: 22px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
-      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .step-number {
@@ -454,10 +462,6 @@
     }
 
     @media (max-width: 1100px) {
-      .info-cards {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
       .three-cards {
         grid-template-columns: 1fr;
       }
@@ -465,7 +469,7 @@
 
     @media (max-width: 980px) {
       .info-cards,
-      .split-two,
+      .info-card-row-2,
       .steps-grid {
         grid-template-columns: 1fr;
       }
@@ -526,7 +530,7 @@
         </div>
 
         <div class="top-actions">
-          <a class="top-link" href="club-info.html">Club Info & Contact</a>
+          <a class="btn btn-secondary" href="club-info.html">Club Info & Contact</a>
           <a
             class="btn btn-primary"
             href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
@@ -610,6 +614,9 @@
               <div class="info-card">Teen Group:<br />Ages 10 to 13</div>
               <div class="info-card">Youth Group:<br />Ages 14 to 17</div>
               <div class="info-card">Adult Group:<br />Ages 18+</div>
+            </div>
+
+            <div class="info-card-row-2">
               <div class="info-card">New Players, Veteran Players, &amp; Forever DMs Welcome!</div>
               <div class="info-card">Dungeons &amp; Dragons 5th Edition (2014)<br />with “Light Homebrew”</div>
             </div>
@@ -631,7 +638,7 @@
           <div class="three-cards">
             <article class="story-card">
               <div class="story-image-wrap">
-                <img class="story-image" src="images/scene-07-armor.jpg" alt="Character image" />
+                <img class="story-image" src="images/scene-07-armor.jpg" alt="Create a character image" />
               </div>
               <div class="story-copy">
                 <div class="story-kicker">Create a Character</div>
@@ -645,7 +652,7 @@
 
             <article class="story-card">
               <div class="story-image-wrap">
-                <img class="story-image" src="images/scene-06-park.jpg" alt="Adventure image" />
+                <img class="story-image" src="images/scene-06-park.jpg" alt="Play the game image" />
               </div>
               <div class="story-copy">
                 <div class="story-kicker">Play the Game</div>
@@ -659,7 +666,7 @@
 
             <article class="story-card">
               <div class="story-image-wrap">
-                <img class="story-image" src="images/scene-11-bard.jpg" alt="Storytelling image" />
+                <img class="story-image" src="images/scene-11-bard.jpg" alt="Tell a story image" />
               </div>
               <div class="story-copy">
                 <div class="story-kicker">Tell a Story</div>
@@ -678,7 +685,7 @@
     <section class="section">
       <div class="wrap">
         <div class="panel content-pad">
-          <div class="split-two">
+          <div class="goal-section">
             <div class="card">
               <h3>Our Goal</h3>
               <p>
@@ -691,6 +698,10 @@
               <p>
                 We currently plan to support three groups: ages 10 to 13, ages 14 to 17, and adults 18+.
               </p>
+            </div>
+
+            <div class="photo-panel">
+              <img src="images/hero-party.jpg" alt="Players gathered around a D&D table" />
             </div>
           </div>
         </div>
@@ -747,7 +758,7 @@
           <div class="cta-actions">
             <a
               class="btn btn-primary"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSe4Of4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe4ABSAJMiZkn80H2mS8DpQD_CpsKAkONIyyskVnyIPB5g/viewform?usp=sharing&ouid=113822626722652938325"
               target="_blank"
               rel="noopener noreferrer"
             >
