@@ -27,8 +27,6 @@
       --parchment: #e6d3a6;
       --parchment-2: #d7bf87;
       --parchment-ink: #2f2112;
-      --card-dark: rgba(19, 12, 42, 0.92);
-      --line: rgba(255, 255, 255, 0.08);
       --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
       --radius-xl: 28px;
       --radius-lg: 22px;
@@ -122,6 +120,7 @@
       height: 48px;
       border-radius: 50%;
       object-fit: cover;
+      object-position: center;
       border: 2px solid rgba(255,255,255,0.12);
       box-shadow: 0 0 0 5px rgba(255,255,255,0.03);
       background: #1b123a;
@@ -217,26 +216,25 @@
         radial-gradient(circle at center, transparent 56%, rgba(255,255,255,0.02));
     }
 
+    .hero-title-small {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      text-align: center;
+      font-family: "Cinzel", serif;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1;
+    }
+
     .hero-kicker {
       position: relative;
       z-index: 1;
       text-align: center;
       color: var(--gold-light);
-      text-transform: uppercase;
-      letter-spacing: 2.4px;
-      font-size: 12px;
+      font-size: clamp(18px, 2.2vw, 30px);
       font-weight: 800;
-      margin-bottom: 8px;
-    }
-
-    .hero-title-small {
-      position: relative;
-      z-index: 1;
-      margin: 0 0 18px;
-      text-align: center;
-      font-family: "Cinzel", serif;
-      font-size: clamp(34px, 5vw, 64px);
-      line-height: 1;
+      margin: 14px 0 22px;
+      line-height: 1.15;
     }
 
     .hero-image-frame {
@@ -249,6 +247,8 @@
         inset 0 0 0 1px rgba(255,255,255,0.04),
         0 20px 40px rgba(0,0,0,0.2);
       background: #120c29;
+      max-width: 1040px;
+      margin: 0 auto;
     }
 
     .hero-image {
@@ -270,7 +270,7 @@
       position: relative;
       z-index: 1;
       text-align: center;
-      padding: 30px 10px 8px;
+      padding: 34px 10px 8px;
     }
 
     .hero-title {
@@ -278,14 +278,19 @@
       font-family: "Cinzel", serif;
       text-transform: uppercase;
       font-size: clamp(40px, 7vw, 92px);
-      line-height: 0.92;
+      line-height: 0.88;
       letter-spacing: -1px;
       text-wrap: balance;
     }
 
+    .hero-title .line-break {
+      display: block;
+      margin-top: 16px;
+    }
+
     .hero-copy {
       max-width: 860px;
-      margin: 18px auto 0;
+      margin: 22px auto 0;
       color: var(--muted);
       font-size: clamp(17px, 2vw, 22px);
     }
@@ -448,7 +453,7 @@
     }
 
     .story-image-wrap {
-      min-height: 360px;
+      min-height: 340px;
       background: #120d2a;
     }
 
@@ -737,8 +742,8 @@
     <section class="hero">
       <div class="wrap">
         <div class="hero-shell">
-          <div class="hero-kicker">A Safe and Fun Place to Act Out Your Heroic Fantasy</div>
           <h1 class="hero-title-small">NEPA TTRPG Club</h1>
+          <div class="hero-kicker">A Safe and Fun Place to Act Out Your Heroic Fantasy</div>
 
           <div class="hero-image-frame">
             <img
@@ -750,7 +755,10 @@
           </div>
 
           <div class="hero-content">
-            <h2 class="hero-title">Quests Await.<br />Heroes Needed.</h2>
+            <h2 class="hero-title">
+              Quests Await.
+              <span class="line-break">Heroes Needed.</span>
+            </h2>
             <p class="hero-copy">
               Join a tabletop role-playing game club where teens and adults can create characters, roll dice,
               explore fantasy worlds, and grow into confident D&amp;D players in a welcoming community.
@@ -826,7 +834,7 @@
               <div class="story-image-wrap">
                 <img
                   class="story-image"
-                  src="images/scene-10-fighter.jpg"
+                  src="images/scene-07-armor.jpg"
                   alt="A grounded but heroic fantasy image"
                 />
               </div>
@@ -844,7 +852,7 @@
               <div class="story-image-wrap">
                 <img
                   class="story-image"
-                  src="images/scene-07-armor.jpg"
+                  src="images/scene-06-park.jpg"
                   alt="Fantasy themed image suggesting adventure and action"
                 />
               </div>
@@ -863,8 +871,8 @@
               <div class="story-image-wrap">
                 <img
                   class="story-image"
-                  src="images/scene-08-wizard.jpg"
-                  alt="Magical reflection image with fantasy atmosphere"
+                  src="images/scene-11-bard.jpg"
+                  alt="Magical everyday image with fantasy atmosphere"
                 />
               </div>
               <div class="story-copy">
