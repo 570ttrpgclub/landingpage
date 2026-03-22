@@ -177,8 +177,8 @@
     }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.10);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.10);
       color: var(--ink);
     }
 
@@ -190,7 +190,7 @@
       position: relative;
       overflow: hidden;
       border-radius: 36px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.08);
       box-shadow: var(--shadow);
       background:
         radial-gradient(circle at top center, rgba(241, 218, 149, 0.10), transparent 28%),
@@ -213,11 +213,11 @@
       inset: 0;
       pointer-events: none;
       background:
-        linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.02), transparent),
-        radial-gradient(circle at center, transparent 48%, rgba(0, 0, 0, 0.18));
+        linear-gradient(90deg, transparent, rgba(255,255,255,0.02), transparent),
+        radial-gradient(circle at center, transparent 48%, rgba(0,0,0,0.18));
     }
 
-    .hero-title-small {
+    .hero-kicker {
       position: relative;
       z-index: 1;
       margin: 0;
@@ -243,11 +243,11 @@
       z-index: 1;
       overflow: hidden;
       border-radius: 26px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255,255,255,0.08);
       background: #110b22;
       box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.04),
-        0 18px 36px rgba(0, 0, 0, 0.18);
+        inset 0 0 0 1px rgba(255,255,255,0.04),
+        0 18px 36px rgba(0,0,0,0.18);
       max-width: 1100px;
       margin: 0 auto;
     }
@@ -264,7 +264,7 @@
       pointer-events: none;
       background:
         linear-gradient(180deg, rgba(8, 6, 16, 0.10), rgba(8, 6, 16, 0.34)),
-        radial-gradient(circle at center, transparent 38%, rgba(0, 0, 0, 0.12));
+        radial-gradient(circle at center, transparent 38%, rgba(0,0,0,0.12));
     }
 
     .hero-content {
@@ -458,7 +458,7 @@
 
     .feature-row {
       display: grid;
-      grid-template-columns: 1.18fr 0.82fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 20px;
       align-items: stretch;
       overflow: hidden;
@@ -468,7 +468,7 @@
     }
 
     .feature-row.reverse {
-      grid-template-columns: 0.82fr 1.18fr;
+      grid-template-columns: 0.92fr 1.08fr;
     }
 
     .feature-row.reverse .feature-image-wrap {
@@ -485,10 +485,21 @@
       overflow: hidden;
     }
 
+    .feature-image-wrap.armor-image-wrap {
+      min-height: 360px;
+      max-height: 360px;
+    }
+
     .feature-image {
       height: 100%;
       object-fit: cover;
       object-position: center;
+    }
+
+    .feature-image.armor-image {
+      object-fit: contain;
+      padding: 18px;
+      background: #120d2a;
     }
 
     .feature-copy {
@@ -534,38 +545,41 @@
       font-weight: 700;
     }
 
-    .goal-stack {
+    .matching-grid {
       display: grid;
       gap: 18px;
+      padding: 26px 24px 24px;
     }
 
-    .simple-card {
-      padding: 22px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+    .matching-card {
+      padding: 24px;
+      border-radius: 24px;
       border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.02));
     }
 
-    .simple-card h3 {
+    .matching-card h3 {
       margin: 0 0 12px;
       font-family: "Cinzel", serif;
+      font-size: clamp(26px, 2.8vw, 36px);
+      line-height: 1.08;
     }
 
-    .simple-card p {
+    .matching-card p {
       margin: 0;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 16px;
     }
 
     .divider-photo {
       overflow: hidden;
-      border-radius: 22px;
+      border-radius: 24px;
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: 0 12px 24px rgba(0,0,0,0.16);
     }
 
     .divider-photo img {
-      aspect-ratio: 16 / 6;
+      aspect-ratio: 16 / 7;
       object-fit: cover;
       object-position: center;
     }
@@ -639,8 +653,10 @@
         order: initial;
       }
 
-      .feature-image-wrap {
-        min-height: 340px;
+      .feature-image-wrap,
+      .feature-image-wrap.armor-image-wrap {
+        min-height: 320px;
+        max-height: none;
       }
     }
 
@@ -687,7 +703,8 @@
         padding-right: 16px;
       }
 
-      .feature-stack {
+      .feature-stack,
+      .matching-grid {
         padding: 16px;
       }
 
@@ -695,8 +712,9 @@
         padding: 22px 18px;
       }
 
-      .feature-image-wrap {
-        min-height: 280px;
+      .feature-image-wrap,
+      .feature-image-wrap.armor-image-wrap {
+        min-height: 260px;
       }
     }
   </style>
@@ -732,7 +750,7 @@
     <section class="hero">
       <div class="wrap">
         <div class="hero-shell">
-          <h1 class="hero-title-small">NEPA TTRPG Club</h1>
+          <h1 class="hero-kicker">NEPA TTRPG Club</h1>
           <div class="hero-subkicker">A welcoming guild hall for young adventurers, teen heroes, and adult players alike.</div>
 
           <div class="hero-frame">
@@ -824,8 +842,8 @@
 
           <div class="feature-stack">
             <article class="feature-row">
-              <div class="feature-image-wrap">
-                <img class="feature-image" src="images/scene-07-armor.jpg" alt="Fantasy character image" />
+              <div class="feature-image-wrap armor-image-wrap">
+                <img class="feature-image armor-image" src="images/scene-07-armor.jpg" alt="Fantasy character image" />
               </div>
               <div class="feature-copy">
                 <div class="feature-kicker">Forge Your Hero</div>
@@ -880,16 +898,23 @@
 
     <section class="section">
       <div class="wrap">
-        <div class="panel content-pad">
-          <div class="goal-stack">
-            <div class="simple-card">
+        <div class="panel">
+          <div class="section-head">
+            <h2 class="section-title">Our Goal &amp; Who Can Join?</h2>
+            <p class="section-subtitle">
+              This club is built to be welcoming from the first session forward, whether you are trying D&amp;D for the first time or returning with years of experience and a suspiciously heavy dice bag.
+            </p>
+          </div>
+
+          <div class="matching-grid">
+            <div class="matching-card">
               <h3>Our Goal</h3>
               <p>
                 Our aim is to guide players to Level 5, where the rules begin to click, characters feel powerful and distinct, and players leave ready to join other tables with confidence or even begin running one of their own.
               </p>
             </div>
 
-            <div class="simple-card">
+            <div class="matching-card">
               <h3>Who Can Join?</h3>
               <p>
                 We currently plan to support three groups: ages 10 to 13, ages 14 to 17, and adults 18+. Whether you are brand new, coming back after years away, or already own more dice than any reasonable person should, there is room for you here.
@@ -897,7 +922,7 @@
             </div>
 
             <div class="divider-photo">
-              <img src="images/hero-party.jpg" alt="D&D players gathered around a welcoming table" />
+              <img src="images/scene-12-ruby.jpg" alt="Ruby the barbarian in a dramatic fantasy-themed everyday scene" />
             </div>
           </div>
         </div>
